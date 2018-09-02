@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="二叉树," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一些概念（待补充）·二叉树与度为2的树的区别：二叉树的左右子树严格区分，不能随意交换·满二叉树与完全二叉树：满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树 二叉树的存储结构与基本操作1.二叉树的存储结构  二叉链表12345struct node&amp;#123;	typename data;	node* lchild;	node* rchild;&amp;#125;; 由于二叉树建树前根结点不存在，因此">
+<meta name="keywords" content="二叉树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树及其基本操作">
+<meta property="og:url" content="http://zyxingxing.com/2018/09/02/二叉树及其基本操作/index.html">
+<meta property="og:site_name" content="Xingxing の blog">
+<meta property="og:description" content="一些概念（待补充）·二叉树与度为2的树的区别：二叉树的左右子树严格区分，不能随意交换·满二叉树与完全二叉树：满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树 二叉树的存储结构与基本操作1.二叉树的存储结构  二叉链表12345struct node&amp;#123;	typename data;	node* lchild;	node* rchild;&amp;#125;; 由于二叉树建树前根结点不存在，因此">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-02T13:08:30.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二叉树及其基本操作">
+<meta name="twitter:description" content="一些概念（待补充）·二叉树与度为2的树的区别：二叉树的左右子树严格区分，不能随意交换·满二叉树与完全二叉树：满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树 二叉树的存储结构与基本操作1.二叉树的存储结构  二叉链表12345struct node&amp;#123;	typename data;	node* lchild;	node* rchild;&amp;#125;; 由于二叉树建树前根结点不存在，因此">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zyxingxing.com/2018/09/02/二叉树及其基本操作/"/>
+
+
+
+
+
+  <title>二叉树及其基本操作 | Xingxing の blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhongyixin" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xingxing の blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知识点、题目、问题和解决方法等整理，生活杂谈~</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            something
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/02/二叉树及其基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingxing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xingxing の blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">二叉树及其基本操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T21:07:11+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一些概念（待补充）"><a href="#一些概念（待补充）" class="headerlink" title="一些概念（待补充）"></a>一些概念（待补充）</h4><p>·二叉树与度为2的树的区别：二叉树的左右子树严格区分，不能随意交换<br>·满二叉树与完全二叉树：满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树</p>
+<h4 id="二叉树的存储结构与基本操作"><a href="#二叉树的存储结构与基本操作" class="headerlink" title="二叉树的存储结构与基本操作"></a>二叉树的存储结构与基本操作</h4><h5 id="1-二叉树的存储结构"><a href="#1-二叉树的存储结构" class="headerlink" title="1.二叉树的存储结构"></a>1.二叉树的存储结构</h5><p>  二叉链表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	typename data;</span><br><span class="line">	node* lchild;</span><br><span class="line">	node* rchild;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>由于二叉树建树前根结点不存在，因此其地址一般设为NULL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node* root=NULL;</span><br></pre></td></tr></table></figure></p>
+<p>新建结点（往二叉树中插入结点）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">node* newNode(int v)&#123;</span><br><span class="line">	node* Node=new node; </span><br><span class="line">	Node-&gt;data=v;</span><br><span class="line">	Node-&gt;lchild=Node-&gt;rchild=NULL;</span><br><span class="line">	<span class="built_in">return</span> Node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于申请node型地址空间，也可用(node* )malloc(sizeof(node)); 【关于malloc和new的区别这个问题对我来说暂且有点高深……</p>
+<h5 id="2-二叉树结点的查找、修改"><a href="#2-二叉树结点的查找、修改" class="headerlink" title="2.二叉树结点的查找、修改"></a>2.二叉树结点的查找、修改</h5><p>查找操作是指在给定数据域的条件下，在二叉树中找到所有数据域为给定数据域的结点，并将它们的数据域修改为给定的数据域<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void search(node* root,int x,int newdata)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)     //递归边界</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(root-&gt;data==x)</span><br><span class="line">		root-&gt;data=newdata;</span><br><span class="line">    search(root-&gt;lchild,x,newdata);</span><br><span class="line">    search(root-&gt;rchild,x,newdata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-二叉树结点的插入"><a href="#3-二叉树结点的插入" class="headerlink" title="3.二叉树结点的插入"></a>3.二叉树结点的插入</h5><p>二叉树结点的插入位置就是数据域在二叉树中查找失败的位置<br>此处根结点指针root要使用引用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void insert(node* &amp;root,int x)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		root=newNode(x);   //新建数据域为x的结点</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(??由题意要求的二叉树性质应该插在左子树)&#123;</span><br><span class="line">		insert(root-&gt;lchild,x);</span><br><span class="line">	&#125;<span class="keyword">else</span> insert(root-&gt;rchild,x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-二叉树的创建"><a href="#4-二叉树的创建" class="headerlink" title="4.二叉树的创建"></a>4.二叉树的创建</h5><p>实质为二叉树结点的插入过程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node* Create(int data[],int n)&#123;</span><br><span class="line">	node* root=NULL;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">		insert(root,data[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="5-完全二叉树的存储结构"><a href="#5-完全二叉树的存储结构" class="headerlink" title="5.完全二叉树的存储结构"></a>5.完全二叉树的存储结构</h5><p>基于完全二叉树的性质，有更方便的存储方法，可通过建立一个2^n的数组来存放所有结点的信息<br>·在1号位存根结点的前提下，对于完全二叉树中的任何一个结点（编号x），其lchild一定为2x，rchild一定为2x+1<br>·该数组中元素存放的顺序恰好为该完全二叉树的层序遍历序列<br>·判断某个结点是否为叶子结点的标志为：该结点（x)的左子结点编号2x大于结点总个数n<br>·判断某个结点是否为空结点的标志为：该结点下标大于结点总个数n</p>
+<h4 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h4><h5 id="1-先序遍历"><a href="#1-先序遍历" class="headerlink" title="1.先序遍历"></a>1.先序遍历</h5><p>对一棵二叉树的先序遍历，序列的第一个一定是根结点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void preorder(node* root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,root-&gt;data);    //访问根结点，例如输出数据域</span><br><span class="line">	preorder(root-&gt;lchild);</span><br><span class="line">	preorder(root-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-中序遍历"><a href="#2-中序遍历" class="headerlink" title="2.中序遍历"></a>2.中序遍历</h5><p>只要知道根结点，就可以通过根结点在中序遍历序列中的位置区分出左右子树<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void inorder(node* root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		<span class="built_in">return</span>；</span><br><span class="line">	&#125;</span><br><span class="line">	inorder(root-&gt;lchild);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,root-&gt;data);</span><br><span class="line">	inorder(root-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-后序遍历"><a href="#3-后序遍历" class="headerlink" title="3.后序遍历"></a>3.后序遍历</h5><p>对于后序遍历，序列的最后一个一定是根结点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void postorder(node* root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	postorder(root-&gt;lchild);</span><br><span class="line">	postorder(root-&gt;rchild);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,root-&gt;data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>无论是先序还是后序，都必须知道中序遍历序列才能唯一地确定一棵树</p>
+<h5 id="4-层序遍历"><a href="#4-层序遍历" class="headerlink" title="4.层序遍历"></a>4.层序遍历</h5><p>与树的层序遍历同样套路<br>若要记录结点层次，则在node结构体中加设layer<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int data;</span><br><span class="line">    int layer;</span><br><span class="line">	node* lchild;</span><br><span class="line">	node* rchild;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void bfs(node* root)&#123;</span><br><span class="line">	queue&lt;node*&gt; q;</span><br><span class="line">	root-&gt;layer=1;</span><br><span class="line">	q.push(root);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		node* now=q.front();</span><br><span class="line">		q.pop;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,now-&gt;data);  //取出队首结点并访问</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;lchild!=NULL)&#123;</span><br><span class="line">			now-&gt;lchild-&gt;layer=now-&gt;layer+1;</span><br><span class="line">			q.push(now-&gt;lchild);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;rchild!=NULL)&#123;</span><br><span class="line">			now-&gt;rchild-&gt;layer=now-&gt;layer;</span><br><span class="line">			q.push(now-&gt;rchild);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="给定先、中序重建二叉树"><a href="#给定先、中序重建二叉树" class="headerlink" title="给定先、中序重建二叉树"></a>给定先、中序重建二叉树</h4><p>（给定先后序同理）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">node* create(int preL,int preR,int inL,int inR)&#123;</span><br><span class="line">	<span class="keyword">if</span>(preL&gt;preR) </span><br><span class="line">		<span class="built_in">return</span> NULL;</span><br><span class="line">	node* root=new node;</span><br><span class="line">	root-&gt;data=pre[preL];</span><br><span class="line">	int k;</span><br><span class="line">	<span class="keyword">for</span>(k=inL;k&lt;=inR;k++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">in</span>[k]==pre[preL])</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	int numL=k-inL;</span><br><span class="line">	root-&gt;lchild=create(preL+1,preL+numL,inL,k-1);</span><br><span class="line">	root-&gt;rchild=create(preL+numL+1,preR,k+1,inR);</span><br><span class="line">	<span class="built_in">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="二叉树的静态实现"><a href="#二叉树的静态实现" class="headerlink" title="二叉树的静态实现"></a>二叉树的静态实现</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int data,lchild,rchild;    //通常用-1表示子树为空</span><br><span class="line">&#125;Node[maxn];</span><br></pre></td></tr></table></figure>
+<p>其他操作相应更改即可~</p>
+<p>【手码一遍基础操作做一个归纳就酱…】</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/二叉树/" rel="tag"># 二叉树</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/PATA1053-Path-of-Equal-Weight/" rel="next" title="PATA1053 Path of Equal Weight">
+                <i class="fa fa-chevron-left"></i> PATA1053 Path of Equal Weight
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog-logo.jpg"
+                alt="Xingxing" />
+            
+              <p class="site-author-name" itemprop="name">Xingxing</p>
+              <p class="site-description motion-element" itemprop="description">努力了才知道，天赋是多么重要呜呜……</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些概念（待补充）"><span class="nav-number">1.</span> <span class="nav-text">一些概念（待补充）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的存储结构与基本操作"><span class="nav-number">2.</span> <span class="nav-text">二叉树的存储结构与基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-二叉树的存储结构"><span class="nav-number">2.1.</span> <span class="nav-text">1.二叉树的存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-二叉树结点的查找、修改"><span class="nav-number">2.2.</span> <span class="nav-text">2.二叉树结点的查找、修改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-二叉树结点的插入"><span class="nav-number">2.3.</span> <span class="nav-text">3.二叉树结点的插入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-二叉树的创建"><span class="nav-number">2.4.</span> <span class="nav-text">4.二叉树的创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-完全二叉树的存储结构"><span class="nav-number">2.5.</span> <span class="nav-text">5.完全二叉树的存储结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的遍历"><span class="nav-number">3.</span> <span class="nav-text">二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-先序遍历"><span class="nav-number">3.1.</span> <span class="nav-text">1.先序遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-中序遍历"><span class="nav-number">3.2.</span> <span class="nav-text">2.中序遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-后序遍历"><span class="nav-number">3.3.</span> <span class="nav-text">3.后序遍历</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-层序遍历"><span class="nav-number">3.4.</span> <span class="nav-text">4.层序遍历</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给定先、中序重建二叉树"><span class="nav-number">4.</span> <span class="nav-text">给定先、中序重建二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的静态实现"><span class="nav-number">5.</span> <span class="nav-text">二叉树的静态实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingxing</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
