@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="树，DFS," />
+  <meta name="keywords" content="PAT,二叉树,BFS," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path fro">
-<meta name="keywords" content="树，DFS">
+<meta name="description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
+<meta name="keywords" content="PAT,二叉树,BFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1053 Path of Equal Weight">
-<meta property="og:url" content="/2018/09/02/PATA1053-Path-of-Equal-Weight/index.html">
+<meta property="og:title" content="PATA1127 Zigzagging on a Tree">
+<meta property="og:url" content="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path fro">
+<meta property="og:description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/02/PATA1053-Path-of-Equal-Weight/212.jpg">
-<meta property="og:updated_time" content="2018-09-02T08:22:40.043Z">
+<meta property="og:image" content="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg">
+<meta property="og:updated_time" content="2018-09-02T15:09:48.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1053 Path of Equal Weight">
-<meta name="twitter:description" content="Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path fro">
-<meta name="twitter:image" content="/02/PATA1053-Path-of-Equal-Weight/212.jpg">
+<meta name="twitter:title" content="PATA1127 Zigzagging on a Tree">
+<meta name="twitter:description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
+<meta name="twitter:image" content="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/02/PATA1053-Path-of-Equal-Weight/"/>
+  <link rel="canonical" href="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/"/>
 
 
 
 
 
-  <title>PATA1053 Path of Equal Weight | Xingxing の blog</title>
+  <title>PATA1127 Zigzagging on a Tree | Xingxing の blog</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/02/PATA1053-Path-of-Equal-Weight/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1053 Path of Equal Weight</h1>
+          <h1 class="post-title" itemprop="name headline">PATA1127 Zigzagging on a Tree</h1>
         
 
         <div class="post-meta">
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T15:50:54+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T22:48:45+08:00">
                 2018-09-02
               </time>
             
@@ -374,15 +374,13 @@
       
 
       
-        <p>Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R to any leaf node L.<br>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.<br><img src="/02/PATA1053-Path-of-Equal-Weight/212.jpg" alt=""></p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. Each case starts with a line containing 0&lt;N≤100, the number of nodes in a tree, M (&lt;N), the number of non-leaf nodes, and 0&lt;S&lt;2^​30​​, the given weight number. The next line contains N positive numbers where W​i(&lt;1000) corresponds to the tree node T​i​​. Then M lines follow, each in the format:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID K ID[1] ID[2] ... ID[K]</span><br></pre></td></tr></table></figure></p>
-<p>where ID is a two-digit number representing a given non-leaf node, K is the number of its children, followed by a sequence of two-digit ID’s of its children. For the sake of simplicity, let us fix the root ID to be 00.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print all the paths with weight S in non-increasing order. Each path occupies a line with printed weights from the root to the leaf in order. All the numbers must be separated by a space with no extra space at the end of the line.<br>Note: sequence {A​1​​,A​2​​,⋯,A​n​​} is said to be greater than sequence {B1<br>​​,B​2​​,⋯,B​m​​} if there exists 1≤k&lt;min{n,m} such that A​i​​=B​i​​ for i=1,⋯,k, and A​k+1​​&gt;B​k+1​​.</p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">20 9 24</span><br><span class="line">10 2 4 3 5 10 2 18 9 7 2 2 1 3 12 1 8 6 2 2</span><br><span class="line">00 4 01 02 03 04</span><br><span class="line">02 1 05</span><br><span class="line">04 2 06 07</span><br><span class="line">03 3 11 12 13</span><br><span class="line">06 1 09</span><br><span class="line">07 2 08 10</span><br><span class="line">16 1 15</span><br><span class="line">13 3 14 16 17</span><br><span class="line">17 2 18 19</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10 5 2 7</span><br><span class="line">10 4 10</span><br><span class="line">10 3 3 6 2</span><br><span class="line">10 3 3 6 2</span><br></pre></td></tr></table></figure>
-<p>题目大意：<br>一棵结点数为N的树，每个结点对应不同权值，从根结点开始每次下层结点走，走到叶节点为止形成一条完整路径，若该路径上结点权值相加为S，则输出此路径。路径按非递减排序（路径大小规则：第一个结点权值一样就比第二个结点权值，大的在前面，以此类推）<br>思路及注意事项：<br>一个典型的树DFS遍历。把每个结点的孩子节点按权值从大到小排列，这样在遍历的过程中就能保证大的路径被优先遍历到；路径可以用数组存储也可以用变长数组存储；以sum=s为边界条件，此时判断是否到达叶子结点，如果到达，则输出当前路径，否则返回上层。</p>
-<p>用path[]数组存储路径的方法，dfs需要记录当前存储路径结点的个数numN<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int data;</span><br><span class="line">	vector&lt;int&gt; child;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;node&gt; v;</span><br><span class="line">bool cmp(int a,int b)&#123;</span><br><span class="line">	<span class="built_in">return</span> v[a].data&gt;v[b].data;</span><br><span class="line">&#125;</span><br><span class="line">int n,m,s;</span><br><span class="line">int path[100];</span><br><span class="line">void dfs(int index,int numN,int sum)&#123;</span><br><span class="line">	<span class="keyword">if</span>(sum==s)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[index].child.size()==0)&#123;</span><br><span class="line">			<span class="keyword">for</span>(int i=0;i&lt;numN;i++)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d"</span>,v[path[i]].data);</span><br><span class="line">				<span class="keyword">if</span>(i&lt;numN-1) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">return</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;v[index].child.size();i++)&#123;</span><br><span class="line">		int child=v[index].child[i];</span><br><span class="line">		<span class="keyword">if</span>(sum+v[child].data&lt;=s)&#123;    //此处可以这样剪枝</span><br><span class="line">			path[numN]=child;</span><br><span class="line">			dfs(child,numN+1,sum+v[child].data);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int x,k,ch;</span><br><span class="line">	scanf(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;s);</span><br><span class="line">	v.resize(n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	 scanf(<span class="string">"%d"</span>,&amp;v[i].data);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;m;i++)&#123;</span><br><span class="line">		scanf(<span class="string">"%d%d"</span>,&amp;x,&amp;k);</span><br><span class="line">		<span class="keyword">for</span>(int j=0;j&lt;k;j++)&#123;</span><br><span class="line">		 scanf(<span class="string">"%d"</span>,&amp;ch); </span><br><span class="line">	     v[x].child.push_back(ch);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(v[x].child.begin(),v[x].child.end(),cmp);</span><br><span class="line">	&#125;</span><br><span class="line">	path[0]=0;</span><br><span class="line">	dfs(0,1,v[0].data);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>也可以用vector&lt; int &gt; path存储路径，此法dfs中不需要开设numN记录当前结点数<br>但需务必记得在递归向上层返回时将此前push的结点pop出来~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; path;</span><br><span class="line">void dfs(int index,int sum)&#123;</span><br><span class="line">	<span class="keyword">if</span>(sum==s)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[index].child.size()==0)&#123;</span><br><span class="line">			<span class="keyword">for</span>(int i=0;i&lt;path.size();i++)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d"</span>,v[path[i]].data);</span><br><span class="line">				<span class="keyword">if</span>(i&lt;path.size()-1) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">return</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;v[index].child.size();i++)&#123;</span><br><span class="line">		int child=v[index].child[i];</span><br><span class="line">		<span class="keyword">if</span>(sum+v[child].data&lt;=s)&#123;</span><br><span class="line">			path.push_back(child);</span><br><span class="line">			dfs(child,sum+v[child].data);</span><br><span class="line">			path.pop_back();              //这步不能忘</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple standard routine to print the numbers in level-order. However, if you think the problem is too simple, then you are too naive. This time you are supposed to print the numbers in “zigzagging order” – that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left. For example, for the following tree you must output: 1 11 5 8 17 12 20 15.<br><img src="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg" alt=""></p>
+<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line gives a positive integer N (≤30), the total number of nodes in the binary tree. The second line gives the inorder sequence and the third line gives the postorder sequence. All the numbers in a line are separated by a space.</p>
+<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print the zigzagging sequence of the tree in a line. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.</p>
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">12 11 20 17 1 15 8 5</span><br><span class="line">12 20 17 11 15 8 5 1</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 11 5 8 17 12 20 15</span><br></pre></td></tr></table></figure>
+<p>题目大意：<br>给出中序遍历和后序遍历序列，求zigzagging遍历序列，即奇数层顺序输出，偶数层逆序输出（设根结点为第0层）<br>思路：<br>结合<a href="http://zyxingxing.com/2018/09/02/二叉树及其基本操作/" target="_blank" rel="noopener">二叉树及其基本操作</a>中给出的由先序中序构造二叉树的方法，类比写出此题的二叉树构造函数create(),而后进行层序遍历，开辟数组vector ans[]用于在遍历过程中将同一层的结点data值push入对应层号的数组，以便在输出时按层号进行顺逆序输出。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;queue&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int data,layer;</span><br><span class="line">	node* lchild;</span><br><span class="line">	node* rchild;</span><br><span class="line">&#125;; </span><br><span class="line">int <span class="keyword">in</span>[35],post[35];</span><br><span class="line">node* create(int inL,int inR,int postL,int postR)&#123;</span><br><span class="line">	<span class="keyword">if</span>(postL&gt;postR) <span class="built_in">return</span> NULL;</span><br><span class="line">	node* root=new node;</span><br><span class="line">	root-&gt;data=post[postR];</span><br><span class="line">	int k;</span><br><span class="line">	<span class="keyword">for</span>(k=inL;k&lt;=inR;k++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">in</span>[k]==post[postR])</span><br><span class="line">		 <span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	int numL=k-inL;</span><br><span class="line">	root-&gt;lchild=create(inL,k-1,postL,postL+numL-1);</span><br><span class="line">	root-&gt;rchild=create(k+1,inR,postL+numL,postR-1);</span><br><span class="line">	<span class="built_in">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;int&gt; ans[35];</span><br><span class="line">void bfs(node* root)&#123;</span><br><span class="line">	queue&lt;node*&gt; q;</span><br><span class="line">	root-&gt;layer=0;</span><br><span class="line">	q.push(root);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		node* now=q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		ans[now-&gt;layer].push_back(now-&gt;data);</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;lchild!=NULL)&#123;</span><br><span class="line">			now-&gt;lchild-&gt;layer=now-&gt;layer+1;</span><br><span class="line">			q.push(now-&gt;lchild);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;rchild!=NULL)&#123;</span><br><span class="line">			now-&gt;rchild-&gt;layer=now-&gt;layer+1;</span><br><span class="line">			q.push(now-&gt;rchild);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;<span class="keyword">in</span>[i]);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	   scanf(<span class="string">"%d"</span>,&amp;post[i]);</span><br><span class="line">	node* root=create(0,n-1,0,n-1);</span><br><span class="line">	bfs(root);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[0][0]);</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;35;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i%2==1)&#123;</span><br><span class="line">			<span class="keyword">for</span>(int j=0;j&lt;ans[i].size();j++)</span><br><span class="line">			  <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i][j]);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">for</span>(int j=ans[i].size()-1;j&gt;=0;j--)</span><br><span class="line">			 <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>【最爱的还是柳婼小姐姐的代码，精简又高效，全网一级棒<a href="https://www.liuchuo.net/archives/3758" target="_blank" rel="noopener">PAT1127liuchuo</a>】</p>
 
       
     </div>
@@ -400,7 +398,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树，DFS/" rel="tag"># 树，DFS</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
+          
+            <a href="/tags/二叉树/" rel="tag"># 二叉树</a>
+          
+            <a href="/tags/BFS/" rel="tag"># BFS</a>
           
         </div>
       
@@ -413,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/树及树的遍历/" rel="next" title="树及树的遍历">
-                <i class="fa fa-chevron-left"></i> 树及树的遍历
+              <a href="/2018/09/02/二叉树及其基本操作/" rel="next" title="二叉树及其基本操作">
+                <i class="fa fa-chevron-left"></i> 二叉树及其基本操作
               </a>
             
           </div>
@@ -422,10 +424,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/02/二叉树及其基本操作/" rel="prev" title="二叉树及其基本操作">
-                二叉树及其基本操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
