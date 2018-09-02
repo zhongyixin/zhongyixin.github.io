@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="PAT,二叉树,BFS," />
+  <meta name="keywords" content="BST," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
-<meta name="keywords" content="PAT,二叉树,BFS">
+<meta name="description" content="Binary Search Tree· BST是一棵数据域有序的树，其左子树上的所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大于根结点的数据域，即其中序遍历是有序的。 二叉查找树的基本操作1.查找操作和普通二叉树的查找不同，二叉查找树可根据数据域的比较对左右子树选择递归1234567891011void search(node* root,int x)&amp;#123;	if(">
+<meta name="keywords" content="BST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1127 Zigzagging on a Tree">
-<meta property="og:url" content="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/index.html">
+<meta property="og:title" content="二叉查找树BST">
+<meta property="og:url" content="/2018/09/03/二叉查找树BST/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
+<meta property="og:description" content="Binary Search Tree· BST是一棵数据域有序的树，其左子树上的所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大于根结点的数据域，即其中序遍历是有序的。 二叉查找树的基本操作1.查找操作和普通二叉树的查找不同，二叉查找树可根据数据域的比较对左右子树选择递归1234567891011void search(node* root,int x)&amp;#123;	if(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg">
-<meta property="og:updated_time" content="2018-09-02T15:09:48.313Z">
+<meta property="og:updated_time" content="2018-09-02T17:34:33.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1127 Zigzagging on a Tree">
-<meta name="twitter:description" content="Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple stand">
-<meta name="twitter:image" content="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg">
+<meta name="twitter:title" content="二叉查找树BST">
+<meta name="twitter:description" content="Binary Search Tree· BST是一棵数据域有序的树，其左子树上的所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大于根结点的数据域，即其中序遍历是有序的。 二叉查找树的基本操作1.查找操作和普通二叉树的查找不同，二叉查找树可根据数据域的比较对左右子树选择递归1234567891011void search(node* root,int x)&amp;#123;	if(">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/"/>
+  <link rel="canonical" href="/2018/09/03/二叉查找树BST/"/>
 
 
 
 
 
-  <title>PATA1127 Zigzagging on a Tree | Xingxing の blog</title>
+  <title>二叉查找树BST | Xingxing の blog</title>
   
 
 
@@ -285,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/03/二叉查找树BST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -302,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1127 Zigzagging on a Tree</h1>
+          <h1 class="post-title" itemprop="name headline">二叉查找树BST</h1>
         
 
         <div class="post-meta">
@@ -314,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T22:48:45+08:00">
-                2018-09-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T01:13:55+08:00">
+                2018-09-03
               </time>
             
 
@@ -337,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PAT/" itemprop="url" rel="index">
-                    <span itemprop="name">PAT</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -374,13 +372,11 @@
       
 
       
-        <p>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple standard routine to print the numbers in level-order. However, if you think the problem is too simple, then you are too naive. This time you are supposed to print the numbers in “zigzagging order” – that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left. For example, for the following tree you must output: 1 11 5 8 17 12 20 15.<br><img src="/02/PATA1127-Zigzagging-on-a-Tree/1.jpg" alt=""></p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line gives a positive integer N (≤30), the total number of nodes in the binary tree. The second line gives the inorder sequence and the third line gives the postorder sequence. All the numbers in a line are separated by a space.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print the zigzagging sequence of the tree in a line. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.</p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">12 11 20 17 1 15 8 5</span><br><span class="line">12 20 17 11 15 8 5 1</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 11 5 8 17 12 20 15</span><br></pre></td></tr></table></figure>
-<p>题目大意：<br>给出中序遍历和后序遍历序列，求zigzagging遍历序列，即奇数层顺序输出，偶数层逆序输出（设根结点为第0层）<br>思路：<br>结合<a href="http://zyxingxing.com/2018/09/02/二叉树及其基本操作/" target="_blank" rel="noopener">二叉树及其基本操作</a>中给出的由先序中序构造二叉树的方法，类比写出此题的二叉树构造函数create(),而后进行层序遍历，开辟数组vector ans[]用于在遍历过程中将同一层的结点data值push入对应层号的数组，以便在输出时按层号进行顺逆序输出。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;queue&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int data,layer;</span><br><span class="line">	node* lchild;</span><br><span class="line">	node* rchild;</span><br><span class="line">&#125;; </span><br><span class="line">int <span class="keyword">in</span>[35],post[35];</span><br><span class="line">node* create(int inL,int inR,int postL,int postR)&#123;</span><br><span class="line">	<span class="keyword">if</span>(postL&gt;postR) <span class="built_in">return</span> NULL;</span><br><span class="line">	node* root=new node;</span><br><span class="line">	root-&gt;data=post[postR];</span><br><span class="line">	int k;</span><br><span class="line">	<span class="keyword">for</span>(k=inL;k&lt;=inR;k++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">in</span>[k]==post[postR])</span><br><span class="line">		 <span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	int numL=k-inL;</span><br><span class="line">	root-&gt;lchild=create(inL,k-1,postL,postL+numL-1);</span><br><span class="line">	root-&gt;rchild=create(k+1,inR,postL+numL,postR-1);</span><br><span class="line">	<span class="built_in">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;int&gt; ans[35];</span><br><span class="line">void bfs(node* root)&#123;</span><br><span class="line">	queue&lt;node*&gt; q;</span><br><span class="line">	root-&gt;layer=0;</span><br><span class="line">	q.push(root);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		node* now=q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		ans[now-&gt;layer].push_back(now-&gt;data);</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;lchild!=NULL)&#123;</span><br><span class="line">			now-&gt;lchild-&gt;layer=now-&gt;layer+1;</span><br><span class="line">			q.push(now-&gt;lchild);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(now-&gt;rchild!=NULL)&#123;</span><br><span class="line">			now-&gt;rchild-&gt;layer=now-&gt;layer+1;</span><br><span class="line">			q.push(now-&gt;rchild);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;<span class="keyword">in</span>[i]);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	   scanf(<span class="string">"%d"</span>,&amp;post[i]);</span><br><span class="line">	node* root=create(0,n-1,0,n-1);</span><br><span class="line">	bfs(root);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[0][0]);</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;35;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i%2==1)&#123;</span><br><span class="line">			<span class="keyword">for</span>(int j=0;j&lt;ans[i].size();j++)</span><br><span class="line">			  <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i][j]);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">for</span>(int j=ans[i].size()-1;j&gt;=0;j--)</span><br><span class="line">			 <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>【最爱的还是柳婼小姐姐的代码，精简又高效，全网一级棒<a href="https://www.liuchuo.net/archives/3758" target="_blank" rel="noopener">PAT1127liuchuo</a>】</p>
+        <h4 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h4><p>· BST是一棵数据域有序的树，其左子树上的所有结点的数据域均小于或等于根结点的数据域，右子树上所有结点的数据域均大于根结点的数据域，即其中序遍历是有序的。</p>
+<h4 id="二叉查找树的基本操作"><a href="#二叉查找树的基本操作" class="headerlink" title="二叉查找树的基本操作"></a>二叉查找树的基本操作</h4><h5 id="1-查找操作"><a href="#1-查找操作" class="headerlink" title="1.查找操作"></a>1.查找操作</h5><p>和普通二叉树的查找不同，二叉查找树可根据数据域的比较对左右子树选择递归<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void search(node* root,int x)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"search failed\n"</span>);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x==root-&gt;data)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,root-&gt;data);</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(x&lt;root-&gt;data)&#123;</span><br><span class="line">		search(root-&gt;lchild);</span><br><span class="line">	&#125;<span class="keyword">else</span> search(root-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-插入操作"><a href="#2-插入操作" class="headerlink" title="2.插入操作"></a>2.插入操作</h5><p>查找失败的地方一定是结点需要插入的地方，在上述代码中修改：root==NULL条件下建立以带插入值为数据域的新结点。<br>注意：因为要插入结点而非单纯读取数据，所以要用引用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void insert(node* &amp;root,int x)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		node* root=new node;</span><br><span class="line">		root-&gt;data=x;</span><br><span class="line">		root-&gt;lchild=root-&gt;rchild=NULL;</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(x==root-&gt;data) <span class="built_in">return</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(x&lt;root-&gt;data)&#123;</span><br><span class="line">		insert(root-&gt;lchild,x);</span><br><span class="line">	&#125;<span class="keyword">else</span> insert(root-&gt;rchild,x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-二叉查找树的建立"><a href="#3-二叉查找树的建立" class="headerlink" title="3.二叉查找树的建立"></a>3.二叉查找树的建立</h5><p>即为插入n个结点的过程<br>注：即便是同一组数字，插入他们的顺序不同，最后生成的二叉查找树也不同。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">node* create(int data[],int n)&#123;</span><br><span class="line">	node* root=NULL;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	  insert(root,data[i]);</span><br><span class="line">	<span class="built_in">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-二叉查找树的删除"><a href="#4-二叉查找树的删除" class="headerlink" title="4.二叉查找树的删除"></a>4.二叉查找树的删除</h5><p>（待）</p>
 
       
     </div>
@@ -398,11 +394,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PAT/" rel="tag"># PAT</a>
-          
-            <a href="/tags/二叉树/" rel="tag"># 二叉树</a>
-          
-            <a href="/tags/BFS/" rel="tag"># BFS</a>
+            <a href="/tags/BST/" rel="tag"># BST</a>
           
         </div>
       
@@ -415,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/二叉树及其基本操作/" rel="next" title="二叉树及其基本操作">
-                <i class="fa fa-chevron-left"></i> 二叉树及其基本操作
+              <a href="/2018/09/02/PATA1127-Zigzagging-on-a-Tree/" rel="next" title="PATA1127 Zigzagging on a Tree">
+                <i class="fa fa-chevron-left"></i> PATA1127 Zigzagging on a Tree
               </a>
             
           </div>
@@ -424,10 +416,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/03/二叉查找树BST/" rel="prev" title="二叉查找树BST">
-                二叉查找树BST <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">1.</span> <span class="nav-text">Binary Search Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉查找树的基本操作"><span class="nav-number">2.</span> <span class="nav-text">二叉查找树的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查找操作"><span class="nav-number">2.1.</span> <span class="nav-text">1.查找操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-插入操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.插入操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-二叉查找树的建立"><span class="nav-number">2.3.</span> <span class="nav-text">3.二叉查找树的建立</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-二叉查找树的删除"><span class="nav-number">2.4.</span> <span class="nav-text">4.二叉查找树的删除</span></a></li></ol></li></ol></div>
             
 
           </div>
