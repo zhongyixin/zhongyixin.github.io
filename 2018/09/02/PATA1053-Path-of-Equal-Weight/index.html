@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Xingxing の blog">
 <meta property="og:description" content="Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path fro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/02/PATA1053-Path-of-Equal-Weight/212.jpg">
-<meta property="og:updated_time" content="2018-09-02T08:22:40.043Z">
+<meta property="og:image" content="/img/212.jpg">
+<meta property="og:updated_time" content="2018-09-03T05:00:06.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PATA1053 Path of Equal Weight">
 <meta name="twitter:description" content="Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path fro">
-<meta name="twitter:image" content="/02/PATA1053-Path-of-Equal-Weight/212.jpg">
+<meta name="twitter:image" content="/img/212.jpg">
 
 
 
@@ -374,7 +374,7 @@
       
 
       
-        <p>Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R to any leaf node L.<br>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.<br><img src="/02/PATA1053-Path-of-Equal-Weight/212.jpg" alt=""></p>
+        <p>Given a non-empty tree with root R, and with weight W​i​​ assigned to each tree node T​i​​. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R to any leaf node L.<br>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.<br><img src="/img/212.jpg"></p>
 <h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. Each case starts with a line containing 0&lt;N≤100, the number of nodes in a tree, M (&lt;N), the number of non-leaf nodes, and 0&lt;S&lt;2^​30​​, the given weight number. The next line contains N positive numbers where W​i(&lt;1000) corresponds to the tree node T​i​​. Then M lines follow, each in the format:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID K ID[1] ID[2] ... ID[K]</span><br></pre></td></tr></table></figure></p>
 <p>where ID is a two-digit number representing a given non-leaf node, K is the number of its children, followed by a sequence of two-digit ID’s of its children. For the sake of simplicity, let us fix the root ID to be 00.</p>
 <h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print all the paths with weight S in non-increasing order. Each path occupies a line with printed weights from the root to the leaf in order. All the numbers must be separated by a space with no extra space at the end of the line.<br>Note: sequence {A​1​​,A​2​​,⋯,A​n​​} is said to be greater than sequence {B1<br>​​,B​2​​,⋯,B​m​​} if there exists 1≤k&lt;min{n,m} such that A​i​​=B​i​​ for i=1,⋯,k, and A​k+1​​&gt;B​k+1​​.</p>
