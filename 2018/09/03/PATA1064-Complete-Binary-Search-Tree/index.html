@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="杂谈," />
+  <meta name="keywords" content="PAT,BST," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="折腾了两个半夜，终于在白天搞定了一堆乱七八糟的报错问题，这件事足以说明事情还是得白天做，夜里就该好好休息。最后一个暑假，至少是本科毕业前的最后一个暑假，在敲敲代码看看视频中就结束了，要说遗憾肯定是有的，毕竟荒废的时间一去不返，拖延战胜计划如此种种。九月第一天，希望是一个好的开始，希望没有负担地前行，最好是能从容自信地趟过这条河~后路肯定是有的，所以向前看就好了。另外，希望有空的时候把这次搭建个人博">
-<meta name="keywords" content="杂谈">
+<meta name="description" content="A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:· The left subtree of a node contains only nodes with keys less than the node’s key.· The right su">
+<meta name="keywords" content="PAT,BST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="就从今天起记录自己的学习吧~">
-<meta property="og:url" content="/2018/09/01/就从今天起记录自己的学习吧/index.html">
+<meta property="og:title" content="PATA1064 Complete Binary Search Tree">
+<meta property="og:url" content="/2018/09/03/PATA1064-Complete-Binary-Search-Tree/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="折腾了两个半夜，终于在白天搞定了一堆乱七八糟的报错问题，这件事足以说明事情还是得白天做，夜里就该好好休息。最后一个暑假，至少是本科毕业前的最后一个暑假，在敲敲代码看看视频中就结束了，要说遗憾肯定是有的，毕竟荒废的时间一去不返，拖延战胜计划如此种种。九月第一天，希望是一个好的开始，希望没有负担地前行，最好是能从容自信地趟过这条河~后路肯定是有的，所以向前看就好了。另外，希望有空的时候把这次搭建个人博">
+<meta property="og:description" content="A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:· The left subtree of a node contains only nodes with keys less than the node’s key.· The right su">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T08:27:23.494Z">
+<meta property="og:updated_time" content="2018-09-03T02:55:41.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="就从今天起记录自己的学习吧~">
-<meta name="twitter:description" content="折腾了两个半夜，终于在白天搞定了一堆乱七八糟的报错问题，这件事足以说明事情还是得白天做，夜里就该好好休息。最后一个暑假，至少是本科毕业前的最后一个暑假，在敲敲代码看看视频中就结束了，要说遗憾肯定是有的，毕竟荒废的时间一去不返，拖延战胜计划如此种种。九月第一天，希望是一个好的开始，希望没有负担地前行，最好是能从容自信地趟过这条河~后路肯定是有的，所以向前看就好了。另外，希望有空的时候把这次搭建个人博">
+<meta name="twitter:title" content="PATA1064 Complete Binary Search Tree">
+<meta name="twitter:description" content="A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:· The left subtree of a node contains only nodes with keys less than the node’s key.· The right su">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/01/就从今天起记录自己的学习吧/"/>
+  <link rel="canonical" href="/2018/09/03/PATA1064-Complete-Binary-Search-Tree/"/>
 
 
 
 
 
-  <title>就从今天起记录自己的学习吧~ | Xingxing の blog</title>
+  <title>PATA1064 Complete Binary Search Tree | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/01/就从今天起记录自己的学习吧/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/03/PATA1064-Complete-Binary-Search-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">就从今天起记录自己的学习吧~</h1>
+          <h1 class="post-title" itemprop="name headline">PATA1064 Complete Binary Search Tree</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T13:22:14+08:00">
-                2018-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T09:27:11+08:00">
+                2018-09-03
               </time>
             
 
@@ -322,6 +322,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PAT/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -350,7 +372,12 @@
       
 
       
-        <p>折腾了两个半夜，终于在白天搞定了一堆乱七八糟的报错问题，这件事足以说明事情还是得白天做，夜里就该好好休息。<br>最后一个暑假，至少是本科毕业前的最后一个暑假，在敲敲代码看看视频中就结束了，要说遗憾肯定是有的，毕竟荒废的时间一去不返，拖延战胜计划如此种种。<br>九月第一天，希望是一个好的开始，希望没有负担地前行，最好是能从容自信地趟过这条河~后路肯定是有的，所以向前看就好了。<br>另外，希望有空的时候把这次搭建个人博客绑定域名等过程中遇到的问题和注意事项做一个记录~近期还是先努力学习啦~</p>
+        <p>A Binary Search Tree (BST) is recursively defined as a binary tree which has the following properties:<br>· The left subtree of a node contains only nodes with keys less than the node’s key.<br>· The right subtree of a node contains only nodes with keys greater than or equal to the node’s key.<br>· Both the left and right subtrees must also be binary search trees.<br>A Complete Binary Tree (CBT) is a tree that is completely filled, with the possible exception of the bottom level, which is filled from left to right.<br>Now given a sequence of distinct non-negative integer keys, a unique BST can be constructed if it is required that the tree must also be a CBT. You are supposed to output the level order traversal sequence of this BST.</p>
+<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line contains a positive integer N (≤1000). Then N distinct non-negative integer keys are given in the next line. All the numbers in a line are separated by a space and are no greater than 2000.</p>
+<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print in one line the level order traversal sequence of the corresponding complete binary search tree. All the numbers in a line must be separated by a space, and there must be no extra space at the end of the line.</p>
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">1 2 3 4 5 6 7 8 9 0</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 3 8 1 5 7 9 0 2 4</span><br></pre></td></tr></table></figure>
+<p>题目大意：<br>给出N个权值，由它们创建一棵完全二叉查找树，输出层序遍历<br>思路：<br>基于二叉查找树的特性：中序遍历为非递减有序。可以先将序列从小到大排序，而后对一棵空的完全二叉树1~N进行中序遍历，将权值序列中的数依次填入。最后按完全二叉树的下标依次输出即为其层序遍历序列。（注意：此题中我是按下标从1开始记的，从0开始的话要相应更改完全二叉树左右子树的下标表示式）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int n,cnt=0;</span><br><span class="line">vector&lt;int&gt; <span class="keyword">in</span>,bst;</span><br><span class="line">void inorder(int root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root&gt;n) <span class="built_in">return</span>;</span><br><span class="line">	inorder(2*root);</span><br><span class="line">	cnt++;</span><br><span class="line">	bst[root]=<span class="keyword">in</span>[cnt];</span><br><span class="line">	inorder(2*root+1);</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	in.resize(n+1);</span><br><span class="line">	bst.resize(n+1);</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	  scanf(<span class="string">"%d"</span>,&amp;<span class="keyword">in</span>[i]);</span><br><span class="line">	sort(in.begin()+1,in.end());</span><br><span class="line">	inorder(1);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,bst[1]);</span><br><span class="line">	<span class="keyword">for</span>(int i=2;i&lt;=n;i++)</span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">" %d"</span>,bst[i]);</span><br><span class="line">	<span class="built_in">return</span> 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -368,7 +395,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂谈/" rel="tag"># 杂谈</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
+          
+            <a href="/tags/BST/" rel="tag"># BST</a>
           
         </div>
       
@@ -381,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/09/03/二叉查找树BST/" rel="next" title="二叉查找树BST">
+                <i class="fa fa-chevron-left"></i> 二叉查找树BST
               </a>
             
           </div>
@@ -390,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/01/PAT1017Queueing-at-Bank-1014Waiting-in-Line/" rel="prev" title="PAT1017Queueing at Bank&1014Waiting in Line">
-                PAT1017Queueing at Bank&1014Waiting in Line <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -510,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
