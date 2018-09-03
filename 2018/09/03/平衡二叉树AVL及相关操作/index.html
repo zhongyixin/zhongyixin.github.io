@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="####平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,">
+<meta name="description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
 <meta name="keywords" content="AVL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="平衡二叉树AVL及相关操作">
 <meta property="og:url" content="/2018/09/03/平衡二叉树AVL及相关操作/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="####平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,">
+<meta property="og:description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T14:30:00.394Z">
+<meta property="og:updated_time" content="2018-09-03T14:35:07.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="平衡二叉树AVL及相关操作">
-<meta name="twitter:description" content="####平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,">
+<meta name="twitter:description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
 
 
 
@@ -372,7 +372,7 @@
       
 
       
-        <p>####平衡二叉树AVL的定义<br>· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别<br>· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1<br>· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int v,height;</span><br><span class="line">	node *lchild,*rchild;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <h4 id="平衡二叉树AVL的定义"><a href="#平衡二叉树AVL的定义" class="headerlink" title="平衡二叉树AVL的定义"></a>平衡二叉树AVL的定义</h4><p>· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别<br>· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1<br>· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int v,height;</span><br><span class="line">	node *lchild,*rchild;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>在该定义下新建结点时需增设高度初始值为1；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node* newNode(int v)&#123;</span><br><span class="line">	node* Node=new node;</span><br><span class="line">	Node-&gt;v=v;</span><br><span class="line">	Node-&gt;height=1;</span><br><span class="line">    Node-&gt;lchild=Node-&gt;rchild=NULL;</span><br><span class="line">    <span class="built_in">return</span> Node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>获取结点root所在子树当前高度：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int getHeight(node* root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL) <span class="built_in">return</span> 0;</span><br><span class="line">	<span class="built_in">return</span> root-&gt;height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>计算当前结点root的平衡因子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int getBalance(node* root)&#123;</span><br><span class="line">	<span class="built_in">return</span> getHeight(root-&gt;lchild)-getHeight(root-&gt;rchild); //左减右</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -559,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树的基本操作"><span class="nav-number">1.</span> <span class="nav-text">平衡二叉树的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查找操作"><span class="nav-number">1.1.</span> <span class="nav-text">1.查找操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-插入操作"><span class="nav-number">1.2.</span> <span class="nav-text">2.插入操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-AVL树的建立"><span class="nav-number">1.3.</span> <span class="nav-text">3.AVL树的建立</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树AVL的定义"><span class="nav-number">1.</span> <span class="nav-text">平衡二叉树AVL的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树的基本操作"><span class="nav-number">2.</span> <span class="nav-text">平衡二叉树的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查找操作"><span class="nav-number">2.1.</span> <span class="nav-text">1.查找操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-插入操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.插入操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-AVL树的建立"><span class="nav-number">2.3.</span> <span class="nav-text">3.AVL树的建立</span></a></li></ol></li></ol></div>
             
 
           </div>
