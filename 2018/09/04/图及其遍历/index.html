@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="AVL," />
+  <meta name="keywords" content="BFS,图,DFS," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
-<meta name="keywords" content="AVL">
+<meta name="description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
+<meta name="keywords" content="BFS,图,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="平衡二叉树AVL及相关操作">
-<meta property="og:url" content="/2018/09/03/平衡二叉树AVL及相关操作/index.html">
+<meta property="og:title" content="图及其遍历">
+<meta property="og:url" content="/2018/09/04/图及其遍历/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
+<meta property="og:description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T14:35:07.879Z">
+<meta property="og:updated_time" content="2018-09-04T02:54:02.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="平衡二叉树AVL及相关操作">
-<meta name="twitter:description" content="平衡二叉树AVL的定义· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度1234struct node&amp;#123;	int v,heig">
+<meta name="twitter:title" content="图及其遍历">
+<meta name="twitter:description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/03/平衡二叉树AVL及相关操作/"/>
+  <link rel="canonical" href="/2018/09/04/图及其遍历/"/>
 
 
 
 
 
-  <title>平衡二叉树AVL及相关操作 | Xingxing の blog</title>
+  <title>图及其遍历 | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/03/平衡二叉树AVL及相关操作/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/04/图及其遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">平衡二叉树AVL及相关操作</h1>
+          <h1 class="post-title" itemprop="name headline">图及其遍历</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T19:10:45+08:00">
-                2018-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T08:24:14+08:00">
+                2018-09-04
               </time>
             
 
@@ -372,19 +372,17 @@
       
 
       
-        <h4 id="平衡二叉树AVL的定义"><a href="#平衡二叉树AVL的定义" class="headerlink" title="平衡二叉树AVL的定义"></a>平衡二叉树AVL的定义</h4><p>· AVL树使得树的高度在每次插入元素后仍能保持O(logn)的级别<br>· AVL树仍然是一棵二叉查找树，所谓“平衡”是指，对AVL树的任意结点来说，其左子树与右子树的高度之差（平衡因子）的绝对值不超过1<br>· 由于需要对每个结点都得到平衡因子，因此需要在树的结构中加入一个变量height来记录当前结点为根结点的子树高度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int v,height;</span><br><span class="line">	node *lchild,*rchild;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>在该定义下新建结点时需增设高度初始值为1；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node* newNode(int v)&#123;</span><br><span class="line">	node* Node=new node;</span><br><span class="line">	Node-&gt;v=v;</span><br><span class="line">	Node-&gt;height=1;</span><br><span class="line">    Node-&gt;lchild=Node-&gt;rchild=NULL;</span><br><span class="line">    <span class="built_in">return</span> Node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>获取结点root所在子树当前高度：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int getHeight(node* root)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL) <span class="built_in">return</span> 0;</span><br><span class="line">	<span class="built_in">return</span> root-&gt;height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>计算当前结点root的平衡因子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int getBalance(node* root)&#123;</span><br><span class="line">	<span class="built_in">return</span> getHeight(root-&gt;lchild)-getHeight(root-&gt;rchild); //左减右</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>更新root的height:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void updataHeight(node* root)&#123;</span><br><span class="line">	root-&gt;height=max(getHeight(root-&gt;lchild),getHeight(root-&gt;rchild))+1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>· 之所以不直接记录结点的平衡因子是因为没有办法通过当前结点的子树的平衡因子求得该结点的平衡因子，而需要借助子树的高度间接求得。而结点所在子树的height可以直接取左右子树height的较大值加1</p>
-<h4 id="平衡二叉树的基本操作"><a href="#平衡二叉树的基本操作" class="headerlink" title="平衡二叉树的基本操作"></a>平衡二叉树的基本操作</h4><h5 id="1-查找操作"><a href="#1-查找操作" class="headerlink" title="1.查找操作"></a>1.查找操作</h5><p>和二叉查找树是一样的~</p>
-<h5 id="2-插入操作"><a href="#2-插入操作" class="headerlink" title="2.插入操作"></a>2.插入操作</h5><p>首先了解两个调整过程：左旋和右旋<br>(先贴代码以后补图)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//左旋（Left Rotation)</span><br><span class="line">void L(node* &amp;root)&#123;</span><br><span class="line">	node* temp=root-&gt;rchild;      //脑补画面</span><br><span class="line">	root-&gt;rchild=temp-&gt;lchild;</span><br><span class="line">	temp-&gt;lchild=root;</span><br><span class="line">	updataHeight(root);    //一定要先跟新root因为此root左旋后降了一层</span><br><span class="line">	updataHeight(temp);</span><br><span class="line">	root=temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//右旋（Right Rotation)</span><br><span class="line">void R(node* &amp;root)&#123;</span><br><span class="line">	node* temp=root-&gt;lchild;</span><br><span class="line">	root-&gt;lchild=temp-&gt;rchild;</span><br><span class="line">	temp-&gt;rchild=root;</span><br><span class="line">	updataHeight(root);</span><br><span class="line">	updataHeight(temp);</span><br><span class="line">	root=temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>回到结点插入问题，在插入结点时，只要把最靠近插入结点的失衡结点调整到正常，路径上的所有结点都会平衡。<br>最靠近插入结点的失衡结点的平衡因子只有可能是2或-2，各自对应两种树型（LL,LR）和(RR,RL)  (待补图)</p>
-<p>LL  BF(root)=2,BF(root-&gt;lchild)=1    对root右旋<br>LR  BF(root)=2,BF(root-&gt;lchild)=-1   先对root-&gt;lchild左旋，后对root右旋<br>RR  BF(root)=-2,BF(root-&gt;lchild)=-1  对root左旋<br>RL  BF(root)=-2,BF(root-&gt;lchild)=1   先对root-&gt;lchild右旋，后对root左旋<br>（BF为BalanceFactor）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//AVL树插入权值为v的结点</span><br><span class="line">void insert(node* &amp;root,int v)&#123;</span><br><span class="line">	<span class="keyword">if</span>(root==NULL)&#123;</span><br><span class="line">		root=newNode(v);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(v&lt;root-&gt;v)&#123;</span><br><span class="line">		insert(root-&gt;lchild,v);</span><br><span class="line">		updataHeight(root);</span><br><span class="line">		<span class="keyword">if</span>(getBalance(root)==2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(getBalance(root-&gt;lchild)==1)&#123;</span><br><span class="line">				R(root);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(getBalance(root-&gt;lchild)==-1)&#123;</span><br><span class="line">				L(root-&gt;lchild);</span><br><span class="line">				R(root);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		insert(root-&gt;rchild,v);</span><br><span class="line">        updataHeight(root);</span><br><span class="line">		<span class="keyword">if</span>(getBalance(root)==-2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(getBalance(root-&gt;lchild)==-1)&#123;</span><br><span class="line">				L(root);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(getBalance(root-&gt;lchild)==1)&#123;</span><br><span class="line">				R(root-&gt;lchild);</span><br><span class="line">				L(root);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="3-AVL树的建立"><a href="#3-AVL树的建立" class="headerlink" title="3.AVL树的建立"></a>3.AVL树的建立</h5><p>调用插入函数依次插入即可，同二叉查找树</p>
-<p>【摘自《算法笔记》……</p>
+        <h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点<br>· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成<br>· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度<br>· 顶点和边的量化属性称为权值，点权和边权</p>
+<h3 id="图的存储"><a href="#图的存储" class="headerlink" title="图的存储"></a>图的存储</h3><h4 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1.邻接矩阵"></a>1.邻接矩阵</h4><p>另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之间有边且i-&gt;j,则另G[i][j]=1（也可存边权）,若为无向边则另G[i][j]也为1（或边权），若不存在边则为0<br>注：邻接矩阵只适用于顶点数目不太大（一般≤1000）的情况</p>
+<h4 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2.邻接表"></a>2.邻接表</h4><p>用vector实现会比较方便：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; V[N];     //存顶点编号</span><br></pre></td></tr></table></figure></p>
+<p>若要添加一条从顶点i到顶点j的有向边：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V[i].push_bach(j);</span><br></pre></td></tr></table></figure></p>
+<p>也可以同时存顶点编号和边权，自行创建结构体即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct Node&#123;</span><br><span class="line">	int v,w;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>则邻接表的定义更改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Node&gt; V[N];</span><br></pre></td></tr></table></figure></p>
+<p>添加从i到j的边权为x的有向边：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V[i].push_bach(Node&#123;j,x&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3><p>几个概念<br>· 连通、连通图和连通分量<br>无向图中，如果从顶点i到j有路径，则称i与j连通，如果图中任意两个顶点之间都连通，则称该图为连通图；否则图中的极大连通子图称为连通分量。<br>· 强连通图和强连通分量<br>有向图中，若从i到j有路径，则称从i到j是连通的，如果对于每一顶点i和j，从i到j和从j到i都有路径，则称该图为强连通图；否则将其中的极大强连通子图称为强连通分量<br>（一般把连通分量和强连通分量统称为连通块）</p>
+<h4 id="1-深度优先搜索-DFS-遍历图"><a href="#1-深度优先搜索-DFS-遍历图" class="headerlink" title="1.深度优先搜索(DFS)遍历图"></a>1.深度优先搜索(DFS)遍历图</h4><p>DFS伪代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DFS(u)&#123;           //访问顶点u</span><br><span class="line">	vis[u]=<span class="literal">true</span>;      //设置u为已访问</span><br><span class="line">	<span class="keyword">for</span>(从u出发能到达的所有顶点v)</span><br><span class="line">	  <span class="keyword">if</span>(vis[v]==<span class="literal">false</span>)    //如果v未访问</span><br><span class="line">	  	 DFS(v);          //递归访问v  ,此处访问深度+1</span><br><span class="line">&#125;</span><br><span class="line">DFSTrave(G)&#123;     //遍历图G</span><br><span class="line">    <span class="keyword">for</span>(G的所有顶点u)</span><br><span class="line">      <span class="keyword">if</span>(vis[u]==<span class="literal">false</span>)</span><br><span class="line">      	  DFS(u);       //访问u所在的连通块</span><br><span class="line">      	                //此处可一并操作数连通块个数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-广度优先搜索-BFS-遍历图"><a href="#2-广度优先搜索-BFS-遍历图" class="headerlink" title="2.广度优先搜索(BFS)遍历图"></a>2.广度优先搜索(BFS)遍历图</h4><p>BFS伪代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">BFS(u)&#123;</span><br><span class="line">	queue q;     //定义队列 &lt;int&gt;/&lt;node&gt;/...</span><br><span class="line">	将u入队；</span><br><span class="line">	vis[u]=<span class="literal">true</span>;  //设置u为已访问</span><br><span class="line">	<span class="keyword">while</span>(q非空)&#123;</span><br><span class="line">		取出q的队首元素u进行访问；</span><br><span class="line">		<span class="keyword">for</span>(从u出发能到达的所有顶点v)  //此处可更新层号</span><br><span class="line">		   <span class="keyword">if</span>(vis[v]==<span class="literal">false</span>)&#123;</span><br><span class="line">		   	将v入队；          </span><br><span class="line">		   	vis[v]=<span class="literal">true</span>;</span><br><span class="line">		   &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">BFSTrave(G)&#123;</span><br><span class="line">	<span class="keyword">for</span>(G的所有顶点u)</span><br><span class="line">	  <span class="keyword">if</span>(vis[u]==<span class="literal">false</span>)</span><br><span class="line">	  	BFS(u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>具体实现需根据题意合理建立邻接矩阵或邻接表，设置变量类型为int或结构体元素或其他~</p>
 
       
     </div>
@@ -402,7 +400,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/AVL/" rel="tag"># AVL</a>
+            <a href="/tags/BFS/" rel="tag"># BFS</a>
+          
+            <a href="/tags/图/" rel="tag"># 图</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
           
         </div>
       
@@ -415,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/03/PATA1064-Complete-Binary-Search-Tree/" rel="next" title="PATA1064 Complete Binary Search Tree">
-                <i class="fa fa-chevron-left"></i> PATA1064 Complete Binary Search Tree
+              <a href="/2018/09/04/PATA1123-Is-It-a-Complete-AVL-Tree/" rel="next" title="PATA1123 Is It a Complete AVL Tree">
+                <i class="fa fa-chevron-left"></i> PATA1123 Is It a Complete AVL Tree
               </a>
             
           </div>
@@ -424,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/04/PATA1123-Is-It-a-Complete-AVL-Tree/" rel="prev" title="PATA1123 Is It a Complete AVL Tree">
-                PATA1123 Is It a Complete AVL Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树AVL的定义"><span class="nav-number">1.</span> <span class="nav-text">平衡二叉树AVL的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平衡二叉树的基本操作"><span class="nav-number">2.</span> <span class="nav-text">平衡二叉树的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查找操作"><span class="nav-number">2.1.</span> <span class="nav-text">1.查找操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-插入操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.插入操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-AVL树的建立"><span class="nav-number">2.3.</span> <span class="nav-text">3.AVL树的建立</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的存储"><span class="nav-number">2.</span> <span class="nav-text">图的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-邻接矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">1.邻接矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-邻接表"><span class="nav-number">2.2.</span> <span class="nav-text">2.邻接表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的遍历"><span class="nav-number">3.</span> <span class="nav-text">图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-深度优先搜索-DFS-遍历图"><span class="nav-number">3.1.</span> <span class="nav-text">1.深度优先搜索(DFS)遍历图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-广度优先搜索-BFS-遍历图"><span class="nav-number">3.2.</span> <span class="nav-text">2.广度优先搜索(BFS)遍历图</span></a></li></ol></li></ol></div>
             
 
           </div>
