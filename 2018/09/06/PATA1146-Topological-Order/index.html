@@ -88,7 +88,7 @@
 <meta property="og:description" content="This is a problem given in the Graduate Entrance Exam in 2018: Which of the following is NOT a topological order obtained from the given directed graph? Now you are supposed to write a program to test">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/img/1146.jpg">
-<meta property="og:updated_time" content="2018-09-06T12:18:05.850Z">
+<meta property="og:updated_time" content="2018-09-06T12:24:54.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PATA1146 Topological Order">
 <meta name="twitter:description" content="This is a problem given in the Graduate Entrance Exam in 2018: Which of the following is NOT a topological order obtained from the given directed graph? Now you are supposed to write a program to test">
@@ -381,6 +381,7 @@
 <h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 4</span><br></pre></td></tr></table></figure>
 <p>题目大意：<br>判断样例序列是否为拓扑排序，若不是则输出该样例序号<br>思路：<br>结合拓扑排序的性质，判断当前结点是否入度为0，若不为0，则不是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1010;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n,m,k,<span class="keyword">in</span>[maxn]=&#123;0&#125;;</span><br><span class="line">	int a,b,num=0;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	vector&lt;int&gt; node[maxn];</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;m;i++)&#123;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		node[a].push_back(b);</span><br><span class="line">		<span class="keyword">in</span>[b]++;</span><br><span class="line">	&#125;</span><br><span class="line">	cin&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;k;i++)&#123;</span><br><span class="line">		bool flag=<span class="literal">true</span>;</span><br><span class="line">		vector&lt;int&gt; tempin(<span class="keyword">in</span>,<span class="keyword">in</span>+n+1);</span><br><span class="line">		<span class="keyword">for</span>(int j=0;j&lt;n;j++)&#123;</span><br><span class="line">			cin&gt;&gt;a;</span><br><span class="line">			<span class="keyword">if</span>(tempin[a]!=0)&#123;</span><br><span class="line">				flag=<span class="literal">false</span>;</span><br><span class="line">				<span class="built_in">continue</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">for</span>(int it=0;it&lt;node[a].size();it++)&#123;</span><br><span class="line">					tempin[node[a][it]]--;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="literal">false</span>)&#123;</span><br><span class="line">			num++;</span><br><span class="line">			<span class="keyword">if</span>(num==1) cout&lt;&lt;i;</span><br><span class="line">			<span class="keyword">else</span> cout&lt;&lt;<span class="string">" "</span>&lt;&lt;i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>今天域名zyxingxing.com的域名突然访问不了了，我暴哭~这两天马上要考试我就先不折腾了嘤嘤嘤，暂时用zhongyixin.github.io访问，反正也是我自己看看的~</p>
+<p>【一分钟后后续】好吧让我说什么好呢~实名认证完就恢复啦~ 等考完试我把这些关于建站遇到的问题做个汇总叭，虽然最后都很无脑地解决了，但是也一定困惑了很多人~ （虽然可能也没人看得到呢嘤嘤…</p>
 
       
     </div>
@@ -420,6 +421,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/06/动态规划专题/" rel="prev" title="动态规划专题">
+                动态规划专题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -500,7 +505,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -522,7 +527,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
