@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1 常用操作v.push_">
+<meta name="description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1(4)int b[7]=">
 <meta name="keywords" content="STL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL库相关——变长数组vector">
 <meta property="og:url" content="/2018/09/06/STL库相关——变长数组vector/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1 常用操作v.push_">
+<meta property="og:description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1(4)int b[7]=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-06T08:57:20.549Z">
+<meta property="og:updated_time" content="2018-09-06T12:11:11.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL库相关——变长数组vector">
-<meta name="twitter:description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1 常用操作v.push_">
+<meta name="twitter:description" content="STL:即C++标准模板库(Standard Template Library)此篇为vector的常见用法整理。 头文件#includeusing namespace std; 初始化(1)vector v; //空(2)vector v(10); //定义了10个整型元素的向量(3)vector v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1(4)int b[7]=">
 
 
 
@@ -374,7 +374,7 @@
       
         <p>STL:即C++标准模板库(Standard Template Library)<br>此篇为vector的常见用法整理。</p>
 <h4 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h4><p>#include<vector><br>using namespace std;</vector></p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>(1)vector<int> v; //空<br>(2)vector<int> v(10); //定义了10个整型元素的向量<br>(3)vector<int> v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1</int></int></int></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>(1)vector<int> v; //空<br>(2)vector<int> v(10); //定义了10个整型元素的向量<br>(3)vector<int> v(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1<br>(4)int b[7]={1,2,3,4,5,9,8};<br>   vector<int> a(b,b+7); //从数组中获得初值b[0]-b[6]<br>   数组也可以是vector<int> c[n]<br>   则复制变长数组c到a为vector<int> a(c,c+n);</int></int></int></int></int></int></p>
 <h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><p>v.push_back(x); //在尾部添加一个元素<br>v.pop_back(); //在尾部删除元素<br>v.size();  //获得vector中元素个数<br>v.clear();  //清空<br>v.empty();  //判断是否为空<br>v.insert(v.begin()+1,5); //在第一个元素（从0算起）的位置插入数值5，如1234变15234<br>v.resize(n); //将v的现有元素调整至n个<br>v.erase(v.begin()+3); //删除第三个元素<br>v.erase(v.begin()+1,v.begin()+4); //删除第1到第3个元素（左闭右开）<br>vector之间可以直接复制或比较操作<br>a.swap(b); //将向量a，b进行整体性交换</p>
 <h4 id="访问操作"><a href="#访问操作" class="headerlink" title="访问操作"></a>访问操作</h4><p>1.通过下标访问，像数组一样<br>2.通过迭代器访问</p>
 
@@ -500,7 +500,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -522,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
