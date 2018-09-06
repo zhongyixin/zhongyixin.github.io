@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="插入排序,堆排序," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="挂一个题，此处感谢东小皇同学帮我修正并实现了我此前的思路~ This time your job is to fill a sequence of N positive integers into a spiral matrix in non-increasing order. A spiral matrix is filled in from the first element at the u">
+<meta name="description" content="According to Wikipedia:Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, f">
+<meta name="keywords" content="插入排序,堆排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1105 Spiral Matrix">
-<meta property="og:url" content="/2018/09/05/PATA1105-Spiral-Matrix/index.html">
+<meta property="og:title" content="PATA1098 Insertion or Heap Sort">
+<meta property="og:url" content="/2018/09/06/PATA1098-Insertion-or-Heap-Sort/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="挂一个题，此处感谢东小皇同学帮我修正并实现了我此前的思路~ This time your job is to fill a sequence of N positive integers into a spiral matrix in non-increasing order. A spiral matrix is filled in from the first element at the u">
+<meta property="og:description" content="According to Wikipedia:Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T16:27:11.287Z">
+<meta property="og:updated_time" content="2018-09-06T01:09:27.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1105 Spiral Matrix">
-<meta name="twitter:description" content="挂一个题，此处感谢东小皇同学帮我修正并实现了我此前的思路~ This time your job is to fill a sequence of N positive integers into a spiral matrix in non-increasing order. A spiral matrix is filled in from the first element at the u">
+<meta name="twitter:title" content="PATA1098 Insertion or Heap Sort">
+<meta name="twitter:description" content="According to Wikipedia:Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, f">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/05/PATA1105-Spiral-Matrix/"/>
+  <link rel="canonical" href="/2018/09/06/PATA1098-Insertion-or-Heap-Sort/"/>
 
 
 
 
 
-  <title>PATA1105 Spiral Matrix | Xingxing の blog</title>
+  <title>PATA1098 Insertion or Heap Sort | Xingxing の blog</title>
   
 
 
@@ -282,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/05/PATA1105-Spiral-Matrix/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/06/PATA1098-Insertion-or-Heap-Sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -299,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1105 Spiral Matrix</h1>
+          <h1 class="post-title" itemprop="name headline">PATA1098 Insertion or Heap Sort</h1>
         
 
         <div class="post-meta">
@@ -311,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T13:42:49+08:00">
-                2018-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T08:58:43+08:00">
+                2018-09-06
               </time>
             
 
@@ -371,15 +372,14 @@
       
 
       
-        <p>挂一个题，此处感谢<a href="https://dpter.github.io/" target="_blank" rel="noopener">东小皇同学</a>帮我修正并实现了我此前的思路~</p>
-<p>This time your job is to fill a sequence of N positive integers into a spiral matrix in non-increasing order. A spiral matrix is filled in from the first element at the upper-left corner, then move in a clockwise spiral. The matrix has m rows and n columns, where m and n satisfy the following: m×n must be equal to N; m≥n; and m−n is the minimum of all the possible values.</p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line gives a positive integer N. Then the next line contains N positive integers to be filled into the spiral matrix. All the numbers are no more than 10^​4​​. The numbers in a line are separated by spaces.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, output the resulting matrix in m lines, each contains n numbers. There must be exactly 1 space between two adjacent numbers, and no extra space at the end of each line.</p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">37 76 20 98 76 42 53 95 60 81 58 93</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">98 95 93</span><br><span class="line">42 37 81</span><br><span class="line">53 20 76</span><br><span class="line">58 60 76</span><br></pre></td></tr></table></figure>
-<p>题目大意：<br>按从大到小顺序将数组螺旋形输出，其中行列m×n的选取为m&gt;n且m尽可能接近n<br>思路：<br>每次按右-&gt;下-&gt;左-&gt;上的方向探查周围四点，若还没填入数据则移位至该点填入，此处需注意向右探查时需先查看上方点是否已有数据，若无则优先向上走。此外，乙级中的此题对空间限制较严，采用动态数组可以解决这个问题。感谢丁同学的友情帮助~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;cmath&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">bool cmp(int a, int b)&#123;</span><br><span class="line">	<span class="built_in">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int N;</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line">	vector&lt;int &gt;num(N);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i&lt;N; i++)&#123;</span><br><span class="line">		scanf(<span class="string">"%d"</span>, &amp;num[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(num.begin(), num.end(), cmp);</span><br><span class="line">	int m = (int)ceil(sqrt(1.0*N));</span><br><span class="line">	<span class="keyword">while</span> (N%m != 0)&#123;</span><br><span class="line">		m++;</span><br><span class="line">	&#125;</span><br><span class="line">	int n = N / m;</span><br><span class="line">	int x = 0, y = 0, index = 0;</span><br><span class="line">	int X[4] = &#123; 0, 1, 0, -1 &#125;;</span><br><span class="line">	int Y[4] = &#123; 1, 0, -1, 0 &#125;;</span><br><span class="line">	vector&lt;vector&lt;int&gt; &gt; ans(m, vector&lt;int&gt;(n));</span><br><span class="line">	<span class="keyword">while</span> (index&lt;N)&#123;</span><br><span class="line">		ans[x][y] = num[index++];</span><br><span class="line">		<span class="keyword">for</span> (int i = 0; i&lt;4; i++)&#123;</span><br><span class="line">			int xi = x + X[i];</span><br><span class="line">			int yi = y + Y[i];</span><br><span class="line">			<span class="keyword">if</span> (xi &gt;= 0 &amp;&amp; xi&lt;m&amp;&amp;yi &gt;= 0 &amp;&amp; yi&lt;n&amp;&amp;ans[xi][yi] == 0)&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == 0 &amp;&amp; xi&gt;0 &amp;&amp; yi&gt;0 &amp;&amp; ans[xi - 1][yi - 1] == 0)&#123;</span><br><span class="line">					//每一次判断右面是否为空的时候先判断上面为不为空</span><br><span class="line">					//若为空,向上填空</span><br><span class="line">					x = xi - 1;</span><br><span class="line">					y = yi - 1;</span><br><span class="line">					<span class="built_in">break</span>;</span><br><span class="line">				&#125;//若不为空则向右填 </span><br><span class="line">				x = xi;</span><br><span class="line">				y = yi;</span><br><span class="line">				<span class="built_in">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i&lt;m; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j&lt;n; j++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>, ans[i][j]);</span><br><span class="line">			<span class="keyword">if</span> (j != n - 1) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>题外话：如果探查右侧点之前不检查上方点的空闲情况，样例会出现如下错误输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">98 95 93</span><br><span class="line">20 37 81</span><br><span class="line">53 42 76</span><br><span class="line">58 60 76</span><br></pre></td></tr></table></figure></p>
-<p>即在第一圈上右下边填完后紧贴着已填内壁前进，4×3矩阵则形成了一个逆时针旋转90度的“凹”字形~此前我就是做到这里没有再坚持思考一下…</p>
+        <p>According to Wikipedia:<br>Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.<br>Heap sort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. it involves the use of a heap data structure rather than a linear-time search to find the maximum.<br>Now given the initial sequence of integers, together with a sequence which is a result of several iterations of some sorting method, can you tell which sorting method we are using?</p>
+<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line gives a positive integer N (≤100). Then in the next line, N integers are given as the initial sequence. The last line contains the partially sorted sequence of the N numbers. It is assumed that the target sequence is always ascending. All the numbers in a line are separated by a space.</p>
+<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print in the first line either “Insertion Sort” or “Heap Sort” to indicate the method used to obtain the partial result. Then run this method for one more iteration and output in the second line the resuling sequence. It is guaranteed that the answer is unique for each test case. All the numbers in a line must be separated by a space, and there must be no extra space at the end of the line.</p>
+<h4 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">3 1 2 8 7 5 9 4 6 0</span><br><span class="line">1 2 3 7 8 5 9 4 6 0</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Insertion Sort</span><br><span class="line">1 2 3 5 7 8 9 4 6 0</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">3 1 2 8 7 5 9 4 6 0</span><br><span class="line">6 4 5 1 0 3 2 7 8 9</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Heap Sort</span><br><span class="line">5 4 3 1 0 2 6 7 8 9</span><br></pre></td></tr></table></figure>
+<p>题目大意：<br>给出长度为N的原始序列和排序过程的中间序列，判断其为插入排序还是堆排序的中间序列，并输出下一轮该排序的序列。<br>思路：<br>根据<a href="http://zyxingxing.com/2018/09/05/排序算法整理/" target="_blank" rel="noopener">排序算法整理</a>中给出的插入排序和堆排序函数代码，进行适当修改，添加next为标识，判断当前排序temp是否与now相同，若相同则在进行一轮排序即返回。先判断是否为插入排序，若不是再求其堆排序序列~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int n;</span><br><span class="line">vector&lt;int&gt; orgi,now,temp;</span><br><span class="line">bool <span class="function"><span class="title">isInsertion</span></span>()&#123;</span><br><span class="line">	int next=0;</span><br><span class="line">	<span class="keyword">for</span>(int i=2;i&lt;=n;i++)&#123;</span><br><span class="line">		int j=i-1;</span><br><span class="line">		int x=temp[i];</span><br><span class="line">		<span class="keyword">while</span>(temp[j]&gt;x&amp;&amp;j&gt;=1)&#123;</span><br><span class="line">			temp[j+1]=temp[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		temp[j+1]=x;</span><br><span class="line">		<span class="keyword">if</span>(next==1) <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(temp==now)</span><br><span class="line">			next=1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">void downAdjust(int low,int high)&#123;</span><br><span class="line">	int i=low,j=i*2;</span><br><span class="line">	<span class="keyword">while</span>(j&lt;=high)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j+1&lt;=high&amp;&amp;temp[j+1]&gt;temp[j]) j++;</span><br><span class="line">		<span class="keyword">if</span>(temp[j]&gt;temp[i])&#123;</span><br><span class="line">			swap(temp[i],temp[j]);</span><br><span class="line">			i=j;</span><br><span class="line">			j=i*2;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="built_in">break</span>; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void <span class="function"><span class="title">Heap</span></span>()&#123;</span><br><span class="line">	int next=0;</span><br><span class="line">	<span class="keyword">for</span>(int i=n/2;i&gt;=1;i--)</span><br><span class="line">	  downAdjust(i,n);</span><br><span class="line">	<span class="keyword">for</span>(int i=n;i&gt;=2;i--)&#123;</span><br><span class="line">		swap(temp[1],temp[i]);</span><br><span class="line">		downAdjust(1,i-1);</span><br><span class="line">		<span class="keyword">if</span>(next==1) <span class="built_in">return</span>;</span><br><span class="line">		<span class="keyword">if</span>(temp==now) next=1;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	orgi.resize(n+1);</span><br><span class="line">	now.resize(n+1);</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	   scanf(<span class="string">"%d"</span>,&amp;orgi[i]);</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">	   scanf(<span class="string">"%d"</span>,&amp;now[i]);</span><br><span class="line">	 temp=orgi;</span><br><span class="line">	 <span class="keyword">if</span>(isInsertion())&#123;</span><br><span class="line">	 	<span class="built_in">printf</span>(<span class="string">"Insertion Sort\n"</span>);</span><br><span class="line">	 	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">	 		<span class="built_in">printf</span>(<span class="string">"%d"</span>,temp[i]);</span><br><span class="line">	 		<span class="keyword">if</span>(i&lt;n) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	 	temp=orgi;</span><br><span class="line">	 	<span class="built_in">printf</span>(<span class="string">"Heap Sort\n"</span>);</span><br><span class="line">	 	Heap();</span><br><span class="line">		 <span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">		 	<span class="built_in">printf</span>(<span class="string">"%d"</span>,temp[i]);</span><br><span class="line">		 	<span class="keyword">if</span>(i&lt;n) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="built_in">return</span> 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -395,6 +395,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/插入排序/" rel="tag"># 插入排序</a>
+          
+            <a href="/tags/堆排序/" rel="tag"># 堆排序</a>
+          
+        </div>
+      
 
       
       
@@ -404,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/04/最短路径算法/" rel="next" title="最短路径算法之Dijkstra">
-                <i class="fa fa-chevron-left"></i> 最短路径算法之Dijkstra
+              <a href="/2018/09/05/排序算法整理/" rel="next" title="排序算法整理">
+                <i class="fa fa-chevron-left"></i> 排序算法整理
               </a>
             
           </div>
@@ -413,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/PATA1111-Online-Map/" rel="prev" title="PATA1111 Online Map">
-                PATA1111 Online Map <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">3.</span> <span class="nav-text">Sample Input 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">4.</span> <span class="nav-text">Sample Output 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">5.</span> <span class="nav-text">Sample Input 2:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">6.</span> <span class="nav-text">Sample Output 2:</span></a></li></ol></div>
             
 
           </div>
