@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="贪心," />
+  <meta name="keywords" content="链表," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="开了这篇文章发现好像也没什么要说的~一般需要结合实际实际情况判断当前的局部最优策略，没有什么模板aa介绍一下贪心算法的定义：· 贪心法是求解一类最优化问题的方法，它总是考虑当前状态下局部最优（或较优）的策略，来使全局的结果达到最优（或较优）· 至于怎么取最优，想一想感觉一下就好，证明一般靠反证法或数学归纳法· 总之如果想到了好像可行的策略，又无法举出反例，就好了 (区间贪心)">
-<meta name="keywords" content="贪心">
+<meta name="description" content="一些概念· 线性表可分为顺序表和链表，其中顺序表可简单理解为数组。· 数组为一块连续的地址空间，而链表则是由若干个节点组成（每个节点表示一个元素），且结点在内存中的存储位置通常是不连续的。· 链表的两个节点之间一般通过一个指针来从一个结点指向另一个结点· 链表的结点由两部分构成，即数据域和指针域1234struct node&amp;#123;	typename data;	node* next;&amp;#12">
+<meta name="keywords" content="链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="贪心算法">
-<meta property="og:url" content="/2018/09/07/贪心算法/index.html">
+<meta property="og:title" content="链表处理">
+<meta property="og:url" content="/2018/09/07/链表处理/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="开了这篇文章发现好像也没什么要说的~一般需要结合实际实际情况判断当前的局部最优策略，没有什么模板aa介绍一下贪心算法的定义：· 贪心法是求解一类最优化问题的方法，它总是考虑当前状态下局部最优（或较优）的策略，来使全局的结果达到最优（或较优）· 至于怎么取最优，想一想感觉一下就好，证明一般靠反证法或数学归纳法· 总之如果想到了好像可行的策略，又无法举出反例，就好了 (区间贪心)">
+<meta property="og:description" content="一些概念· 线性表可分为顺序表和链表，其中顺序表可简单理解为数组。· 数组为一块连续的地址空间，而链表则是由若干个节点组成（每个节点表示一个元素），且结点在内存中的存储位置通常是不连续的。· 链表的两个节点之间一般通过一个指针来从一个结点指向另一个结点· 链表的结点由两部分构成，即数据域和指针域1234struct node&amp;#123;	typename data;	node* next;&amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T12:09:35.987Z">
+<meta property="og:updated_time" content="2018-09-07T14:31:32.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="贪心算法">
-<meta name="twitter:description" content="开了这篇文章发现好像也没什么要说的~一般需要结合实际实际情况判断当前的局部最优策略，没有什么模板aa介绍一下贪心算法的定义：· 贪心法是求解一类最优化问题的方法，它总是考虑当前状态下局部最优（或较优）的策略，来使全局的结果达到最优（或较优）· 至于怎么取最优，想一想感觉一下就好，证明一般靠反证法或数学归纳法· 总之如果想到了好像可行的策略，又无法举出反例，就好了 (区间贪心)">
+<meta name="twitter:title" content="链表处理">
+<meta name="twitter:description" content="一些概念· 线性表可分为顺序表和链表，其中顺序表可简单理解为数组。· 数组为一块连续的地址空间，而链表则是由若干个节点组成（每个节点表示一个元素），且结点在内存中的存储位置通常是不连续的。· 链表的两个节点之间一般通过一个指针来从一个结点指向另一个结点· 链表的结点由两部分构成，即数据域和指针域1234struct node&amp;#123;	typename data;	node* next;&amp;#12">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/07/贪心算法/"/>
+  <link rel="canonical" href="/2018/09/07/链表处理/"/>
 
 
 
 
 
-  <title>贪心算法 | Xingxing の blog</title>
+  <title>链表处理 | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/07/贪心算法/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/07/链表处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">贪心算法</h1>
+          <h1 class="post-title" itemprop="name headline">链表处理</h1>
         
 
         <div class="post-meta">
@@ -312,7 +312,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T19:57:10+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T20:35:19+08:00">
                 2018-09-07
               </time>
             
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -372,9 +372,17 @@
       
 
       
-        <p>开了这篇文章发现好像也没什么要说的~<br>一般需要结合实际实际情况判断当前的局部最优策略，没有什么模板aa<br>介绍一下贪心算法的定义：<br>· 贪心法是求解一类最优化问题的方法，它总是考虑当前状态下局部最优（或较优）的策略，来使全局的结果达到最优（或较优）<br>· 至于怎么取最优，想一想感觉一下就好，证明一般靠反证法或数学归纳法<br>· 总之如果想到了好像可行的策略，又无法举出反例，就好了</p>
-<p>(区间贪心)</p>
-
+        <h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>· 线性表可分为顺序表和链表，其中顺序表可简单理解为数组。<br>· 数组为一块连续的地址空间，而链表则是由若干个节点组成（每个节点表示一个元素），且结点在内存中的存储位置通常是不连续的。<br>· 链表的两个节点之间一般通过一个指针来从一个结点指向另一个结点<br>· 链表的结点由两部分构成，即数据域和指针域<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	typename data;</span><br><span class="line">	node* next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>· 链表又可分为带头结点(head)的链表和不带头结点的链表。</p>
+<h3 id="使用malloc函数或new运算符为链表结点分配内存空间"><a href="#使用malloc函数或new运算符为链表结点分配内存空间" class="headerlink" title="使用malloc函数或new运算符为链表结点分配内存空间"></a>使用malloc函数或new运算符为链表结点分配内存空间</h3><h4 id="malloc函数"><a href="#malloc函数" class="headerlink" title="malloc函数"></a>malloc函数</h4><p>C语言stdlib.h头文件下的<br>……</p>
+<h4 id="new运算符（这个好用）"><a href="#new运算符（这个好用）" class="headerlink" title="new运算符（这个好用）"></a>new运算符（这个好用）</h4><p>例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int* p=new int;</span><br><span class="line">node* p=new node;</span><br></pre></td></tr></table></figure></p>
+<p>……</p>
+<h4 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h4><p>1.free函数<br>对应malloc函数<br>……<br>2.delete函数<br>对应new运算符<br>一般考试中，不写也没事……</p>
+<h3 id="链表的基本操作"><a href="#链表的基本操作" class="headerlink" title="链表的基本操作"></a>链表的基本操作</h3><h4 id="创建链表"><a href="#创建链表" class="headerlink" title="创建链表"></a>创建链表</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">struct node&#123;</span><br><span class="line">	int data;</span><br><span class="line">	node* next;</span><br><span class="line">&#125;;</span><br><span class="line">node* create(int Array[])&#123;</span><br><span class="line">	node *p,*pre,*head;  //pre保存当前结点的前驱结点，head为头结点</span><br><span class="line">	head=new node;       //创建头结点</span><br><span class="line">	head-&gt;next=NULL;     //头节点不需要数据域，指针域初始为NULL</span><br><span class="line">	pre=head;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">		p=new node;</span><br><span class="line">		p-&gt;data=Array[i];</span><br><span class="line">		p-&gt;next=NULL;</span><br><span class="line">		pre-&gt;next=p;</span><br><span class="line">		pre=p;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">return</span> head;   //返回头结点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//在以head为头结点的链表上计数元素x的个数</span><br><span class="line">int search(node* head,int x)&#123;</span><br><span class="line">	int count=0;</span><br><span class="line">	node *p=head-&gt;next;</span><br><span class="line">	<span class="keyword">while</span>(p!=NULL)&#123;</span><br><span class="line">		<span class="keyword">if</span>(p-&gt;data==x) count++;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//将x插入以head为头结点的链表的第pos个位置上</span><br><span class="line">void insert(node* head,int pos,int x)&#123;</span><br><span class="line">	node* p=head;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;pos-1;i++)&#123;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	node* q=new node;</span><br><span class="line">	q-&gt;data=x;</span><br><span class="line">	q-&gt;next=p-&gt;next;</span><br><span class="line">	p-&gt;next=q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//删除以head为头结点的链表中所有数据域为x的结点</span><br><span class="line">void del(node* head,int x)&#123;</span><br><span class="line">	node* p=head-&gt;next;</span><br><span class="line">	node* pre=head;</span><br><span class="line">	<span class="keyword">while</span>(p!=NULL)&#123;</span><br><span class="line">		<span class="keyword">if</span>(p-&gt;data==x)&#123;</span><br><span class="line">			pre-&gt;next=p-&gt;next;</span><br><span class="line">			delete(p);</span><br><span class="line">			p=pre-&gt;next;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pre=p;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h3>
       
     </div>
     
@@ -391,7 +399,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/贪心/" rel="tag"># 贪心</a>
+            <a href="/tags/链表/" rel="tag"># 链表</a>
           
         </div>
       
@@ -404,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/PATA1029-Median/" rel="next" title="PATA1029 Median">
-                <i class="fa fa-chevron-left"></i> PATA1029 Median
+              <a href="/2018/09/07/PATA1038-Recover-the-Smallest-Number/" rel="next" title="PATA1038 Recover the Smallest Number">
+                <i class="fa fa-chevron-left"></i> PATA1038 Recover the Smallest Number
               </a>
             
           </div>
@@ -413,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/PATA1038-Recover-the-Smallest-Number/" rel="prev" title="PATA1038 Recover the Smallest Number">
-                PATA1038 Recover the Smallest Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -533,6 +546,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用malloc函数或new运算符为链表结点分配内存空间"><span class="nav-number">2.</span> <span class="nav-text">使用malloc函数或new运算符为链表结点分配内存空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#malloc函数"><span class="nav-number">2.1.</span> <span class="nav-text">malloc函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new运算符（这个好用）"><span class="nav-number">2.2.</span> <span class="nav-text">new运算符（这个好用）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存泄露"><span class="nav-number">2.3.</span> <span class="nav-text">内存泄露</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表的基本操作"><span class="nav-number">3.</span> <span class="nav-text">链表的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建链表"><span class="nav-number">3.1.</span> <span class="nav-text">创建链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找元素"><span class="nav-number">3.2.</span> <span class="nav-text">查找元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素"><span class="nav-number">3.3.</span> <span class="nav-text">插入元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">3.4.</span> <span class="nav-text">删除元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态链表"><span class="nav-number">4.</span> <span class="nav-text">静态链表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
