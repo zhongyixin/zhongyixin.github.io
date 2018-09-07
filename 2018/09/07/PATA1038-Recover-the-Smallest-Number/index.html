@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="two pointer," />
+  <meta name="keywords" content="贪心," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
-<meta name="keywords" content="two pointer">
+<meta name="description" content="Given a collection of number segments, you are supposed to recover the smallest number from them. For example, given { 32, 321, 3214, 0229, 87 }, we can recover many numbers such like 32-321-3214-0229">
+<meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1029 Median">
-<meta property="og:url" content="/2018/09/07/PATA1029-Median/index.html">
+<meta property="og:title" content="PATA1038 Recover the Smallest Number">
+<meta property="og:url" content="/2018/09/07/PATA1038-Recover-the-Smallest-Number/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
+<meta property="og:description" content="Given a collection of number segments, you are supposed to recover the smallest number from them. For example, given { 32, 321, 3214, 0229, 87 }, we can recover many numbers such like 32-321-3214-0229">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T11:34:41.117Z">
+<meta property="og:updated_time" content="2018-09-07T12:30:31.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1029 Median">
-<meta name="twitter:description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
+<meta name="twitter:title" content="PATA1038 Recover the Smallest Number">
+<meta name="twitter:description" content="Given a collection of number segments, you are supposed to recover the smallest number from them. For example, given { 32, 321, 3214, 0229, 87 }, we can recover many numbers such like 32-321-3214-0229">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="/2018/09/07/PATA1029-Median/"/>
+  <link rel="canonical" href="/2018/09/07/PATA1038-Recover-the-Smallest-Number/"/>
 
 
 
 
 
-  <title>PATA1029 Median | Xingxing の blog</title>
+  <title>PATA1038 Recover the Smallest Number | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2018/09/07/PATA1029-Median/">
+    <link itemprop="mainEntityOfPage" href="/2018/09/07/PATA1038-Recover-the-Smallest-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1029 Median</h1>
+          <h1 class="post-title" itemprop="name headline">PATA1038 Recover the Smallest Number</h1>
         
 
         <div class="post-meta">
@@ -312,7 +312,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T19:22:09+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T20:25:38+08:00">
                 2018-09-07
               </time>
             
@@ -372,13 +372,12 @@
       
 
       
-        <p>Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is 15. The median of two sequences is defined to be the median of the nondecreasing sequence which contains all the elements of both sequences. For example, the median of S1 and S2 is 13.<br>Given two increasing sequences of integers, you are asked to find their median.</p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. Each case occupies 2 lines, each gives the information of a sequence. For each sequence, the first positive integer N (≤2×10^​5​​) is the size of that sequence. Then N integers follow, separated by a space. It is guaranteed that all the integers are in the range of long int.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case you should output the median of the two given sequences in a line.</p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4 11 12 13 14</span><br><span class="line">5 9 10 15 16 17</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">13</span><br></pre></td></tr></table></figure>
-<p>题目大意：<br>求两个有序序列合并后的中间数<br>思路：<br>（看起来很简单一道题然而……我……）<br>原始归并过程参考<a href="http://zyxingxing.com/2018/09/07/Two-Pointer/" target="_blank" rel="noopener">two pointer</a>中的merge()函数，但在此题中若采用开辟数组C存放归并后序列再取中间数会导致最后四个点内存超限；改进：可直接求取归并后中间数所在下边，然后对两个序列按大小关系依次扫描直到计数至中间数所在下标，下标所指向的数即为当前A[i]和B[j]中的较小数。然鹅！！最后一点还是内存超限了……暴哭<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//该做法最后一个点过不了</span><br><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line">const int maxn=200010;</span><br><span class="line">const int INF=0x7fffffff; </span><br><span class="line">int A[maxn],B[maxn],C[2*maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n,m;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	  scanf(<span class="string">"%d"</span>,&amp;A[i]);</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;m;i++)</span><br><span class="line">	  scanf(<span class="string">"%d"</span>,&amp;B[i]);</span><br><span class="line">	  A[n]=B[m]=INF;</span><br><span class="line">	int i=0,j=0,index=0;</span><br><span class="line">	A[n]=B[m]=INF;      //这样设置完i或j就会最多加到n或m就不再处理这一序列</span><br><span class="line">	int mid=(n+m-1)/2;</span><br><span class="line">	<span class="keyword">while</span>(index&lt;mid)&#123;</span><br><span class="line">		<span class="keyword">if</span>(A[i]&lt;=B[j])&#123;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;<span class="keyword">else</span> j++;</span><br><span class="line">		index++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(A[i]&lt;B[j])&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,A[i]);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,B[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后附上liuchuo小姐姐的代码~第二个序列一边输入一边处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int k[200005];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    int n, m, temp, count = 0;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (int i = 1; i &lt;= n; i++)</span><br><span class="line">        scanf(<span class="string">"%d"</span>, &amp;k[i]);</span><br><span class="line">    k[n + 1] = 0x7fffffff;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    int midpos = (n + m + 1) / 2, i = 1;</span><br><span class="line">    <span class="keyword">for</span> (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>, &amp;temp);</span><br><span class="line">        <span class="keyword">while</span> (k[i] &lt; temp) &#123;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span> (count == midpos) cout &lt;&lt; k[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count == midpos) cout &lt;&lt; temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count == midpos) cout &lt;&lt; k[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>Given a collection of number segments, you are supposed to recover the smallest number from them. For example, given { 32, 321, 3214, 0229, 87 }, we can recover many numbers such like 32-321-3214-0229-87 or 0229-32-87-321-3214 with respect to different orders of combinations of these segments, and the smallest number is 0229-321-3214-32-87.</p>
+<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. Each case gives a positive integer N (≤10^​4​​) followed by N number segments. Each segment contains a non-negative integer of no more than 8 digits. All the numbers in a line are separated by a space.</p>
+<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case, print the smallest number in one line. Notice that the first digit must not be zero.</p>
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 32 321 3214 0229 87</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">22932132143287</span><br></pre></td></tr></table></figure>
+<p>题目大意：<br>用所给数字拼接处最小数字，为首的0不用输出<br>思路：<br>精华只有一行cmp函数~神奇呀。按数值从小到大排肯定是不可以的，不过对字符串a+b和b+a比较大小就可以了，a+b小的话就把a排在b的前面，然后按所排顺序依次输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;string&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">bool cmp(string a,string b)&#123;</span><br><span class="line">	<span class="built_in">return</span> a+b&lt;b+a;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	vector&lt;string&gt; v(n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	   cin&gt;&gt;v[i];</span><br><span class="line">	sort(v.begin(),v.end(),cmp);</span><br><span class="line">	int i=0;</span><br><span class="line">	string s=<span class="string">""</span>;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">		s+=v[i];</span><br><span class="line">    <span class="keyword">while</span>(s[0]==<span class="string">'0'</span>) s.erase(s.begin());</span><br><span class="line">    cout&lt;&lt;s;</span><br><span class="line">    <span class="keyword">if</span>(s.size()==0) cout&lt;&lt;<span class="string">"0"</span>; </span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -396,7 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/two-pointer/" rel="tag"># two pointer</a>
+            <a href="/tags/贪心/" rel="tag"># 贪心</a>
           
         </div>
       
@@ -409,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/Two-Pointer/" rel="next" title="Two Pointer">
-                <i class="fa fa-chevron-left"></i> Two Pointer
+              <a href="/2018/09/07/贪心算法/" rel="next" title="贪心算法">
+                <i class="fa fa-chevron-left"></i> 贪心算法
               </a>
             
           </div>
@@ -418,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/贪心算法/" rel="prev" title="贪心算法">
-                贪心算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
