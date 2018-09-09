@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="动态规划," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一些概念· 动态规划(Dynamic Programming,DP)是一种用来解决一类最优化问题地算法思想· 动态规划将一个复杂的问题分解成若干个子问题，通过综合子问题的最优解来得到原问题的最优解· 一个问题必须拥有重叠子问题和最优子结构，才能使用动态规划去解决· 分治与动态规划的区别：分治法分解出的子问题是不重叠的，分治法解决的问题不一定是最优化问题· 贪心与动态规划：贪心以一种单链的流水方式进">
+<meta name="keywords" content="动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划专题">
+<meta property="og:url" content="http://zyxingxing.com/2018/09/06/动态规划专题/index.html">
+<meta property="og:site_name" content="Xingxing の blog">
+<meta property="og:description" content="一些概念· 动态规划(Dynamic Programming,DP)是一种用来解决一类最优化问题地算法思想· 动态规划将一个复杂的问题分解成若干个子问题，通过综合子问题的最优解来得到原问题的最优解· 一个问题必须拥有重叠子问题和最优子结构，才能使用动态规划去解决· 分治与动态规划的区别：分治法分解出的子问题是不重叠的，分治法解决的问题不一定是最优化问题· 贪心与动态规划：贪心以一种单链的流水方式进">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-07T00:43:43.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="动态规划专题">
+<meta name="twitter:description" content="一些概念· 动态规划(Dynamic Programming,DP)是一种用来解决一类最优化问题地算法思想· 动态规划将一个复杂的问题分解成若干个子问题，通过综合子问题的最优解来得到原问题的最优解· 一个问题必须拥有重叠子问题和最优子结构，才能使用动态规划去解决· 分治与动态规划的区别：分治法分解出的子问题是不重叠的，分治法解决的问题不一定是最优化问题· 贪心与动态规划：贪心以一种单链的流水方式进">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zyxingxing.com/2018/09/06/动态规划专题/"/>
+
+
+
+
+
+  <title>动态规划专题 | Xingxing の blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhongyixin" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xingxing の blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知识点、题目、问题和解决方法等整理，生活杂谈~</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/06/动态规划专题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingxing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xingxing の blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">动态规划专题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T20:25:34+08:00">
+                2018-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>· 动态规划(Dynamic Programming,DP)是一种用来解决一类最优化问题地算法思想<br>· 动态规划将一个复杂的问题分解成若干个子问题，通过综合子问题的最优解来得到原问题的最优解<br>· 一个问题必须拥有重叠子问题和最优子结构，才能使用动态规划去解决<br>· 分治与动态规划的区别：分治法分解出的子问题是不重叠的，分治法解决的问题不一定是最优化问题<br>· 贪心与动态规划：贪心以一种单链的流水方式进行，通过一种策略直接选择一个子问题去求解，没被选择的子问题就不去求解了，直接抛弃~</p>
+<h4 id="动态规划的递归写法"><a href="#动态规划的递归写法" class="headerlink" title="动态规划的递归写法"></a>动态规划的递归写法</h4><p>以求斐波那契数列为例，开一个一维数组dp[maxn]保存已经计算过的F[n]的值，并用dp[n]=-1表示当前还没被计算<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int F(int n)&#123;</span><br><span class="line">	<span class="keyword">if</span>(n==0||n==1) <span class="built_in">return</span> 1;</span><br><span class="line">	<span class="keyword">if</span>(dp[n]!=-1) <span class="built_in">return</span> dp[n]; //已经计算过，直接返回结果</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		dp[n]=F[n-1]+F(n-2);</span><br><span class="line">		<span class="built_in">return</span> dp[n];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="动态规划的递推写法"><a href="#动态规划的递推写法" class="headerlink" title="动态规划的递推写法"></a>动态规划的递推写法</h4><p>以数塔问题为例，自底向上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//其决策式子为dp[i][j]=max(dp[i+1][j],dp[i+1][j+1])+f[i][j];</span><br><span class="line">//边界为最后一层dp[n][j]=f[n][j]</span><br><span class="line">//最终结果就在dp[1][1]中</span><br><span class="line">//边界</span><br><span class="line"><span class="keyword">for</span>(int j=1;j&lt;=n;j++)&#123;</span><br><span class="line">	dp[n][j]=f[n][j];</span><br><span class="line">&#125;</span><br><span class="line">//从第n-1层不断往上计算出dp[i][j]</span><br><span class="line"><span class="keyword">for</span>(int i=n-1;i&gt;=1;i--)&#123;</span><br><span class="line">	<span class="keyword">for</span>(int j=1;j&lt;=i;j++)&#123;</span><br><span class="line">		//状态转移方程</span><br><span class="line">		dp[i][j]=max(dp[i+1][j],dp[i+1][j+1])+f[i][j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="动态规划经典问题"><a href="#动态规划经典问题" class="headerlink" title="动态规划经典问题"></a>动态规划经典问题</h3><h4 id="最大连续子序列和"><a href="#最大连续子序列和" class="headerlink" title="最大连续子序列和"></a>最大连续子序列和</h4><p>dp[maxn]中记录以当前下标为尾元素的最大和<br>A[i]必为当前子序列尾元素，于是状态转移方程可表述为：<br>dp[i]=max{A[i],dp[i-1]+A[i]};<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//边界</span><br><span class="line">dp[0]=A[0];</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;n;i++)</span><br><span class="line">  dp[i]=max(dp[i-1]+A[i],A[i]);</span><br><span class="line">int k=0;</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;n;i++)</span><br><span class="line">  <span class="keyword">if</span>(dp[i]&gt;dp[k])</span><br><span class="line">    k=i;</span><br><span class="line">//dp[k]中即为最大连续子序列和</span><br></pre></td></tr></table></figure></p>
+<p>插入概念：<br>· 状态的无后效性：当前状态记录了历史信息，一旦当前状态确定，就不会再改变，且未来的决策只能在已有的一个或若干个状态的基础上进行，历史信息只能通过已有的状态取影响未来的决策<br>· 并不是所有状态都具有无后效性，因此必须设计一个无后效性的状态以及相应的状态转移方程（这是动态规划的核心）<br>【PAT中对应题目：PATA1007 Maximum Subsequence Sum】</p>
+<h4 id="最长不下降子序列-LIS-Longest-Increasing-Sequence"><a href="#最长不下降子序列-LIS-Longest-Increasing-Sequence" class="headerlink" title="最长不下降子序列(LIS,Longest Increasing Sequence)"></a>最长不下降子序列(LIS,Longest Increasing Sequence)</h4><p>在一个数字序列中，找到一个最长的子序列（可以不连续），使得这个子序列是不下降（非递减）的<br>原始枚举方法下，每个元素都有取或不取两种情况，O(2^n)，太大<br>动态规划做法:<br>· 令dp[i]表示以A[i]为结尾的最长不下降子序列长度，这样对A[i]有两种可能：<br>1.如果存在A[i]之前的元素A[j],使得A[j]&lt;=A[i]且dp[j]+1&gt;dp<a href="即把A[i]跟在以A[j]为结尾的LIS后面能比当前以A[i]结尾的LIS长度更长">i</a>，那么就把A[i]跟在A[j]结尾的LIS后面，形成一条更长的LIS（令dp[i]=dp[j]+1）<br>2.如果A[i]之前的元素都比A[i]大，那么A[i]只好自己形成一条LIS，长度为1<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int ans=0;</span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;n;i++) &#123;</span><br><span class="line">  <span class="keyword">for</span>(int j=1;j&lt;i;j++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(A[i]&gt;=A[j])</span><br><span class="line">      dp[i]=max(1,dp[j] + 1);</span><br><span class="line">  &#125;</span><br><span class="line">  ans = max(dp[i], ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>【PAT中对应可应用题目：1045 Favorite Color Stripe】</p>
+<h4 id="最长公共子序列-LCS-Longest-Common-Subsequence"><a href="#最长公共子序列-LCS-Longest-Common-Subsequence" class="headerlink" title="最长公共子序列(LCS,Longest Common Subsequence)"></a>最长公共子序列(LCS,Longest Common Subsequence)</h4><p>给定两个字符串（或数字序列）A和B，求一个字符串，求得这个字符串A和B的最长公共部分（子序列可以不连续）<br>动态规划做法：<br>· 令dp[i][j]表示字符串A的i号位和字符串B的j号位之前的LCS长度（下标从1开始？）<br>根据A[i]和B[j]的情况，分两种决策：<br>1.若A[i]==B[j],则字符串A与字符串B的LCS增加了1位，即有dp[i][j]=d[i-1][j-1]+1;<br>2.若A[i]!=B[j],则字符串A与字符串B的LCS无法延长，因此dp[i][j]=max(dp[i-1][j],dp[i][j-1]);<br>边界：dp[i][0]==dp[0][j]=0(0&lt;=i&lt;=n,0&lt;=j&lt;=m)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gets(A+1);  //??gets 从下标为一开始读入</span><br><span class="line">gets(B+1);</span><br><span class="line">int lenA=strlen(A+1);</span><br><span class="line">int lenB=strlen(B+1);</span><br><span class="line">//边界</span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;=lenA;i++)</span><br><span class="line">  dp[i][0]=0;</span><br><span class="line"><span class="keyword">for</span>(int j=0;j&lt;=lenB;j++)</span><br><span class="line">  dp[0][j]=0;</span><br><span class="line">//状态转移方程</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=lenA;i++)</span><br><span class="line">  <span class="keyword">for</span>(int j=1;j&lt;=lenB;j++)&#123;</span><br><span class="line">  	<span class="keyword">if</span>(A[i]==B[j])&#123;</span><br><span class="line">  		dp[i][j]=dp[i-1][j-1]+1;</span><br><span class="line">  	&#125;<span class="keyword">else</span> dp[i][j]=max(dp[i-1][j],dp[i][j-1]);</span><br><span class="line">  &#125;</span><br><span class="line">//dp[lenA][lenB]即答案</span><br></pre></td></tr></table></figure></p>
+<h4 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h4><p>给出一个字符串S，求S的最长回文子串。<br>暴力解法：端点枚举O(n^2),判断回文O(n),总共O(n^3)<br>如果把字符串S倒过来变成T，然后对T和S求LCS，这种想法事实上是错误的，因为一旦S中同时存在一个子串和他的倒序，那么答案就会出错。<br>动态规划做法：<br>· 令dp[i][j]表示S[i]至S[j]所表示的子串是否是回文子串，是则为1，不是为0。这样根据S[i]是否等于S[j]，可以把转移情况分为两类：<br>1.若S[i]==S[j],那么只要S[i+1]至S[j-1]是回文子串，S[i]至S[j]就是回文子串，如果S[i+1]至S[j-1]不是，则S[i]至S[j]也不是；即当S[i]==S[j]时，dp[i][j]=dp[i+1][j-1]<br>2.若S[i]!=S[j],那么dp[i][j]=0<br>边界：<br>dp[i][i]=1,dp[i][i+1]=(S[i]==S[i+1])?1:0;<br>· 如果按i和j从小到大枚举子串的两个端点，然后更新dp[i][j]，会无法保证dp[i+1][j-1]已经被计算过<br>· 可以先枚举子串长度L（L是可以取到整个字符串的长度S.len()的），再枚举左端点i，这样右端点i+L-1也可以直接得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">gets(S);</span><br><span class="line">int len=strlen(S),ans=1;</span><br><span class="line">//边界</span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">	dp[i][i]=1;</span><br><span class="line">	<span class="keyword">if</span>(i&lt;len-1)</span><br><span class="line">     <span class="keyword">if</span>(S[i]==S[i+1])&#123;</span><br><span class="line">     	dp[i][i+1]=1;</span><br><span class="line">		ans=2;   //初始化时注意当前最长回文子串长度</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line">//状态转移方程</span><br><span class="line"><span class="keyword">for</span>(int L=3;L&lt;=len;L++)&#123;    //枚举子串长度</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i+L-1&lt;len;i++)&#123; //枚举子串的起始端点</span><br><span class="line">      int j=i+L-1; //子串右端点</span><br><span class="line">      <span class="keyword">if</span>(S[i]==S[j]&amp;&amp;dp[i+1][j-1]==1)&#123;</span><br><span class="line">        dp[i][j]=1;</span><br><span class="line">        ans=L;  </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br></pre></td></tr></table></figure></p>
+<h4 id="DAG最长路"><a href="#DAG最长路" class="headerlink" title="DAG最长路"></a>DAG最长路</h4><p>（待）（看起来好难呀…）</p>
+<h4 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h4><p>有n件物品，每件物品的重量为w[i],价值为c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都只有一件<br>暴力枚举：每种物品都有放或不放两种选择，O(n^2)<br>动态规划做法：<br>· 令dp[i][v]表示前i件物品恰好装入容量为v的背包中所能获得的最大值。考虑堆第i件物品的选择策略，有两种情况：<br>1.不放第i件物品，那么问题转化为前i-1件物品恰好装入容量为v的背包中所能获得的最大价值，即的dp[i-1][v]<br>2.放第i件物品，那么问题转化为前i-1件物品恰好装入容量为v-w[i]的背包中所能获得的最大价值，即dp[i-1][v-w[i]]+c[i]<br>所以状态转移方程：<br>dp[i][v]=max{dp[i-1][v],dp[i-1][v-w[i]]+c[i]}(1&lt;=i&lt;=n,w[i]&lt;=v&lt;=V)<br>边界：<br>dp[0][v]=0;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//二维</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(int v=w[i];v&lt;=V;v++)&#123;</span><br><span class="line">		dp[i][v]=max(dp[i-1][v],dp[i-1][v-w[i]]+c[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>优化空间复杂度（滚动数组）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//一维</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(int v=V;v&gt;=w[i];v--)&#123;    //此处必须逆序枚举v</span><br><span class="line">		dp[v]=max(dp[v],dp[v-w[i]]+c[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>· 第i件物品放或不放而产生的最大值是完全可以由前面i-1件物品的最大值来决定的，而暴力做法无视了这一点</p>
+<h4 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h4><p>有n种物品，每种物品的单件重量为w[i],价值为从c[i]。现有一个容量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品都有无穷件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//一维</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(int v=w[i];v&lt;=V;v++)&#123;</span><br><span class="line">		dp[v]=max(dp[v],dp[v-w[i]]+c[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/06/PATA1146-Topological-Order/" rel="next" title="PATA1146 Topological Order">
+                <i class="fa fa-chevron-left"></i> PATA1146 Topological Order
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/07/PATA1068-Find-More-Coins/" rel="prev" title="PATA1068 Find More Coins">
+                PATA1068 Find More Coins <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog-logo.jpg"
+                alt="Xingxing" />
+            
+              <p class="site-author-name" itemprop="name">Xingxing</p>
+              <p class="site-description motion-element" itemprop="description">努力了才知道，天赋是多么重要呜呜……</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态规划的递归写法"><span class="nav-number">1.1.</span> <span class="nav-text">动态规划的递归写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态规划的递推写法"><span class="nav-number">1.2.</span> <span class="nav-text">动态规划的递推写法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划经典问题"><span class="nav-number">2.</span> <span class="nav-text">动态规划经典问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最大连续子序列和"><span class="nav-number">2.1.</span> <span class="nav-text">最大连续子序列和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最长不下降子序列-LIS-Longest-Increasing-Sequence"><span class="nav-number">2.2.</span> <span class="nav-text">最长不下降子序列(LIS,Longest Increasing Sequence)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最长公共子序列-LCS-Longest-Common-Subsequence"><span class="nav-number">2.3.</span> <span class="nav-text">最长公共子序列(LCS,Longest Common Subsequence)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最长回文子串"><span class="nav-number">2.4.</span> <span class="nav-text">最长回文子串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DAG最长路"><span class="nav-number">2.5.</span> <span class="nav-text">DAG最长路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#01背包"><span class="nav-number">2.6.</span> <span class="nav-text">01背包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完全背包"><span class="nav-number">2.7.</span> <span class="nav-text">完全背包</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingxing</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+ <div class="powered-by"> <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv"> 本站访客数:<span id="busuanzi_value_site_uv"></span> 
+ </span>
+ </div> 
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
