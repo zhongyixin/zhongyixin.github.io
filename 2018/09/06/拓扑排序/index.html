@@ -449,7 +449,7 @@
 
   
 
-
+  
 
         </div>
         
@@ -756,6 +756,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'af88918b47090f2c17fb',
+          clientSecret: 'b0a72bfbb325338a434203980613a8ee96782905',
+          repo: 'zhongyixin.github.io',
+          owner: 'zhongyixin',
+          admin: ['github帐号'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
   
 
