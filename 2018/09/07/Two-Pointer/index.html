@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="· 类似一种技巧而非算法· 使用两个下表对序列进行扫描，通向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
+<meta name="description" content="· 类似一种技巧而非算法· 使用两个下标对序列进行扫描，同向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Two Pointer">
 <meta property="og:url" content="http://zyxingxing.com/2018/09/07/Two-Pointer/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="· 类似一种技巧而非算法· 使用两个下表对序列进行扫描，通向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
+<meta property="og:description" content="· 类似一种技巧而非算法· 使用两个下标对序列进行扫描，同向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T08:33:44.936Z">
+<meta property="og:updated_time" content="2018-09-12T06:52:57.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Two Pointer">
-<meta name="twitter:description" content="· 类似一种技巧而非算法· 使用两个下表对序列进行扫描，通向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
+<meta name="twitter:description" content="· 类似一种技巧而非算法· 使用两个下标对序列进行扫描，同向或反向视情况而定 给定序列从中求取a+b=m(m给定)描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。二重枚举下复杂度O(n^2)two pointer做法：123456789while(i&amp;lt;j)&amp;#123;	if(a[i]+a[j]==m)&amp;#123;">
 
 
 
@@ -371,7 +371,7 @@
       
 
       
-        <p>· 类似一种技巧而非算法<br>· 使用两个下表对序列进行扫描，通向或反向视情况而定</p>
+        <p>· 类似一种技巧而非算法<br>· 使用两个下标对序列进行扫描，同向或反向视情况而定</p>
 <h4 id="给定序列从中求取a-b-m-m给定"><a href="#给定序列从中求取a-b-m-m给定" class="headerlink" title="给定序列从中求取a+b=m(m给定)"></a>给定序列从中求取a+b=m(m给定)</h4><p>描述：给定一个递增的正整数序列和一个正整数M，求序列中的两个不同位置的数a和b，使得他们的和恰好为M，输出所有满足条件的方案。<br>二重枚举下复杂度O(n^2)<br>two pointer做法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">	<span class="keyword">if</span>(a[i]+a[j]==m)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %d"</span>,i,j);</span><br><span class="line">		i++;</span><br><span class="line">		j--;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(a[i]+a[j]&lt;m)&#123;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;<span class="keyword">else</span> j--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>复杂度O(n);</p>
 <h4 id="序列合并问题"><a href="#序列合并问题" class="headerlink" title="序列合并问题"></a>序列合并问题</h4><p>描述：假设有两个递增序列A与B，要求将他们合并为一个递增序列C。<br>two pointer做法：<br>设置两个下标i和j，初值均为0，表示分别指向序列A的第一个元素和序列B的第一个元素，然后根据A[i]与B[j]的大小来决定哪一个放入序列C<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int merge(int A[],int B[],int C[],int n,int m)&#123;</span><br><span class="line">	int i=0,j=0,index=0;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;n&amp;&amp;j&lt;m)&#123;</span><br><span class="line">		<span class="keyword">if</span>(A[i]&lt;=B[j])&#123;</span><br><span class="line">			C[index++]=A[i++];</span><br><span class="line">		&#125;<span class="keyword">else</span> C[index++]=B[j++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;n) C[index++]=A[i++];  //将序列A的剩余元素加入序列C</span><br><span class="line">	<span class="keyword">while</span>(j&lt;m) C[index++]=B[j++];  //………… B…………</span><br><span class="line">	<span class="built_in">return</span> index;   //返回序列C的长度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
