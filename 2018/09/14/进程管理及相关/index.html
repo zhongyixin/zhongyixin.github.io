@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="two pointer," />
+  <meta name="keywords" content="OS," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
-<meta name="keywords" content="two pointer">
+<meta name="description" content="进程的描述1.进程的定义· 进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位 2.进程的特征· 进程和程序是截然不同的两个概念，进程除了具有程序所没有的PCB结构外，还具有以下特征：(1)动态性；(2)并发性；(3)独立性；(4)异步性 3.进程的基本状态及切换(1)就绪(Ready)状态：进程已分配到除CPU外的所有资源，则按一定策略进入就绪队列（等待被调度）(2)执行(Runn">
+<meta name="keywords" content="OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1029 Median">
-<meta property="og:url" content="http://zyxingxing.com/2018/09/07/PATA1029-Median/index.html">
+<meta property="og:title" content="进程管理及相关">
+<meta property="og:url" content="http://zyxingxing.com/2018/09/14/进程管理及相关/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
+<meta property="og:description" content="进程的描述1.进程的定义· 进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位 2.进程的特征· 进程和程序是截然不同的两个概念，进程除了具有程序所没有的PCB结构外，还具有以下特征：(1)动态性；(2)并发性；(3)独立性；(4)异步性 3.进程的基本状态及切换(1)就绪(Ready)状态：进程已分配到除CPU外的所有资源，则按一定策略进入就绪队列（等待被调度）(2)执行(Runn">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T11:34:41.117Z">
+<meta property="og:updated_time" content="2018-09-14T15:47:13.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1029 Median">
-<meta name="twitter:description" content="Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is">
+<meta name="twitter:title" content="进程管理及相关">
+<meta name="twitter:description" content="进程的描述1.进程的定义· 进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位 2.进程的特征· 进程和程序是截然不同的两个概念，进程除了具有程序所没有的PCB结构外，还具有以下特征：(1)动态性；(2)并发性；(3)独立性；(4)异步性 3.进程的基本状态及切换(1)就绪(Ready)状态：进程已分配到除CPU外的所有资源，则按一定策略进入就绪队列（等待被调度）(2)执行(Runn">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://zyxingxing.com/2018/09/07/PATA1029-Median/"/>
+  <link rel="canonical" href="http://zyxingxing.com/2018/09/14/进程管理及相关/"/>
 
 
 
 
 
-  <title>PATA1029 Median | Xingxing の blog</title>
+  <title>进程管理及相关 | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/07/PATA1029-Median/">
+    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/14/进程管理及相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1029 Median</h1>
+          <h1 class="post-title" itemprop="name headline">进程管理及相关</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T19:22:09+08:00">
-                2018-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T22:58:22+08:00">
+                2018-09-14
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PAT/" itemprop="url" rel="index">
-                    <span itemprop="name">PAT</span>
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
                   </a>
                 </span>
 
@@ -353,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/07/PATA1029-Median/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/07/PATA1029-Median/" itemprop="commentsCount"></span>
+                <a href="/2018/09/14/进程管理及相关/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/14/进程管理及相关/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -382,14 +382,15 @@
       
 
       
-        <p>Given an increasing sequence S of N integers, the median is the number at the middle position. For example, the median of S1 = { 11, 12, 13, 14 } is 12, and the median of S2 = { 9, 10, 15, 16, 17 } is 15. The median of two sequences is defined to be the median of the nondecreasing sequence which contains all the elements of both sequences. For example, the median of S1 and S2 is 13.<br>Given two increasing sequences of integers, you are asked to find their median.</p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. Each case occupies 2 lines, each gives the information of a sequence. For each sequence, the first positive integer N (≤2×10^​5​​) is the size of that sequence. Then N integers follow, separated by a space. It is guaranteed that all the integers are in the range of long int.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each test case you should output the median of the two given sequences in a line.</p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4 11 12 13 14</span><br><span class="line">5 9 10 15 16 17</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">13</span><br></pre></td></tr></table></figure>
-<p>题目大意：<br>求两个有序序列合并后的中间数<br>思路：<br>（看起来很简单一道题然而……我……）<br>原始归并过程参考<a href="http://zyxingxing.com/2018/09/07/Two-Pointer/">two pointer</a>中的merge()函数，但在此题中若采用开辟数组C存放归并后序列再取中间数会导致最后四个点内存超限；改进：可直接求取归并后中间数所在下边，然后对两个序列按大小关系依次扫描直到计数至中间数所在下标，下标所指向的数即为当前A[i]和B[j]中的较小数。然鹅！！最后一点还是内存超限了……暴哭<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//该做法最后一个点过不了</span><br><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line">const int maxn=200010;</span><br><span class="line">const int INF=0x7fffffff; </span><br><span class="line">int A[maxn],B[maxn],C[2*maxn];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int n,m;</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)</span><br><span class="line">	  scanf(<span class="string">"%d"</span>,&amp;A[i]);</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;m;i++)</span><br><span class="line">	  scanf(<span class="string">"%d"</span>,&amp;B[i]);</span><br><span class="line">	  A[n]=B[m]=INF;</span><br><span class="line">	int i=0,j=0,index=0;</span><br><span class="line">	A[n]=B[m]=INF;      //这样设置完i或j就会最多加到n或m就不再处理这一序列</span><br><span class="line">	int mid=(n+m-1)/2;</span><br><span class="line">	<span class="keyword">while</span>(index&lt;mid)&#123;</span><br><span class="line">		<span class="keyword">if</span>(A[i]&lt;=B[j])&#123;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;<span class="keyword">else</span> j++;</span><br><span class="line">		index++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(A[i]&lt;B[j])&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,A[i]);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,B[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后附上liuchuo小姐姐的代码~第二个序列一边输入一边处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int k[200005];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    int n, m, temp, count = 0;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (int i = 1; i &lt;= n; i++)</span><br><span class="line">        scanf(<span class="string">"%d"</span>, &amp;k[i]);</span><br><span class="line">    k[n + 1] = 0x7fffffff;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    int midpos = (n + m + 1) / 2, i = 1;</span><br><span class="line">    <span class="keyword">for</span> (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">        scanf(<span class="string">"%d"</span>, &amp;temp);</span><br><span class="line">        <span class="keyword">while</span> (k[i] &lt; temp) &#123;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">if</span> (count == midpos) cout &lt;&lt; k[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count == midpos) cout &lt;&lt; temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count == midpos) cout &lt;&lt; k[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h3><h4 id="1-进程的定义"><a href="#1-进程的定义" class="headerlink" title="1.进程的定义"></a>1.进程的定义</h4><p>· 进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</p>
+<h4 id="2-进程的特征"><a href="#2-进程的特征" class="headerlink" title="2.进程的特征"></a>2.进程的特征</h4><p>· 进程和程序是截然不同的两个概念，进程除了具有程序所没有的PCB结构外，还具有以下特征：<br>(1)动态性；(2)并发性；(3)独立性；(4)异步性</p>
+<h4 id="3-进程的基本状态及切换"><a href="#3-进程的基本状态及切换" class="headerlink" title="3.进程的基本状态及切换"></a>3.进程的基本状态及切换</h4><p>(1)就绪(Ready)状态：进程已分配到除CPU外的所有资源，则按一定策略进入就绪队列（等待被调度）<br>(2)执行(Running)状态:进程已获得CPU，正在执行<br>(3)阻塞(Block)状态：正在执行的进程由于发生某事件（如I/O请求、申请缓冲区失败等）暂时无法继续执行，即为受阻，引起进程调度，OS把处理机分配给另一个就绪进程，将阻塞状态排入阻塞队列。（为了减少队列操作的开销，根据阻塞原因不同，设置多个阻塞队列）（等待资源）<br>· 就绪状态与执行状态的双向转换（执行状态在把分配给他的CPU时间片用完后会转为就绪状态等待下一次调度），而阻塞状态必须由执行状态转换而来，获得必要资源<br>（不包括CPU时间）后再转化为就绪状态</p>
+<h3 id="进程控制块-PCB"><a href="#进程控制块-PCB" class="headerlink" title="进程控制块(PCB)"></a>进程控制块(PCB)</h3><p>· 所谓创建进程和撤销进程都是指对PCB的操作<br>· 进程控制块(Process Control Block,PCB)描述进程的基本信息和运行状态。<br>· PCB的作用：(1)作为独立运行基本单位的标志；(2)能实现间断性运行方式；(3)提供进程管理所需要的信息；(4)提供进程调度所需要的信息；(5)实现与其他进程的同步与通信<br>· 进程控制块中的信息：(1)进程标识符；(2)处理机状态(上下文，主要有处理机的各种寄存器中的内容组成)；(3)进程调度信息；(4)进程控制信息</p>
+<h3 id="线程及其与进程的区别"><a href="#线程及其与进程的区别" class="headerlink" title="线程及其与进程的区别"></a>线程及其与进程的区别</h3><p>· 【资源】一个进程中可以有多个线程，线程不拥有资源，线程可以访问隶属进程的资源<br>· 【调度】线程是独立调度的基本单位，在同一进程中，线程切换不会引起进程切换，跨进程切换线程会引起进程切换<br>· 【开销】创建或撤销进程时，系统都要为其分配或回收资源，付出的开销远大于创建或撤销线程时的开销。进程切换时，涉及当前执行进程的CPU环境的保存及调度新进程CPU环境的设置，而线程切换只需保存和设置少量寄存器内容，开销很小<br>· 【通信】进程间通信需要进程同步和互斥手段辅助，以保证数据一致，而线程可以通过直接读写同一进程中的数据段来进行通信</p>
+<h3 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h3><h4 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1.批处理系统"></a>1.批处理系统</h4><p>· 该系统中调度算法目标：保证吞吐量和周转时间<br>(1)先来先服务(first-come first-served,FCFS)<br>(2)短作业优先(shortest job first,SJF)<br>(3)最短剩余时间优先(shortest remaining time next,SRTN)</p>
+<h4 id="2-交互式系统"><a href="#2-交互式系统" class="headerlink" title="2.交互式系统"></a>2.交互式系统</h4><p>· 该系统中调度算法目标：快速响应<br>(1)时间片轮转<br>(2)优先级调度<br>(3)多级反馈队列（结合1，2）</p>
+<h4 id="3-实时系统"><a href="#3-实时系统" class="headerlink" title="3.实时系统"></a>3.实时系统</h4><p>（……）</p>
+<h3 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h3><h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3>
       
     </div>
     
@@ -406,7 +407,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/two-pointer/" rel="tag"># two pointer</a>
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -419,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/Two-Pointer/" rel="next" title="Two Pointer">
-                <i class="fa fa-chevron-left"></i> Two Pointer
+              <a href="/2018/09/13/关于python编译器Geany中文注释乱码的问题/" rel="next" title="关于python编译器Geany中文注释乱码的问题">
+                <i class="fa fa-chevron-left"></i> 关于python编译器Geany中文注释乱码的问题
               </a>
             
           </div>
@@ -428,10 +429,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/贪心算法/" rel="prev" title="贪心算法">
-                贪心算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的描述"><span class="nav-number">1.</span> <span class="nav-text">进程的描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-进程的定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.进程的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程的特征"><span class="nav-number">1.2.</span> <span class="nav-text">2.进程的特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程的基本状态及切换"><span class="nav-number">1.3.</span> <span class="nav-text">3.进程的基本状态及切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程控制块-PCB"><span class="nav-number">2.</span> <span class="nav-text">进程控制块(PCB)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程及其与进程的区别"><span class="nav-number">3.</span> <span class="nav-text">线程及其与进程的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程调度算法"><span class="nav-number">4.</span> <span class="nav-text">进程调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-批处理系统"><span class="nav-number">4.1.</span> <span class="nav-text">1.批处理系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-交互式系统"><span class="nav-number">4.2.</span> <span class="nav-text">2.交互式系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-实时系统"><span class="nav-number">4.3.</span> <span class="nav-text">3.实时系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程同步"><span class="nav-number">5.</span> <span class="nav-text">进程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程通信"><span class="nav-number">6.</span> <span class="nav-text">进程通信</span></a></li></ol></div>
             
 
           </div>
