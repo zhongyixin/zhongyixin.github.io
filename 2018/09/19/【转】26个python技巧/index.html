@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DFS,图,BFS," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
-<meta name="keywords" content="DFS,图,BFS">
+<meta name="description" content="原文地址:https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747文/Peter Gleeson译/Allen（然而我并不能打开上述原文链接，但是我发现了这个有趣的地方：www.freecodecamp.com 对应的中文网页 www.freecodecamp.cn ）(另外，此文我是在优达学城公众号上看">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图及其遍历">
-<meta property="og:url" content="http://zyxingxing.com/2018/09/04/图及其遍历/index.html">
+<meta property="og:title" content="【转】26个python技巧">
+<meta property="og:url" content="http://zyxingxing.com/2018/09/19/【转】26个python技巧/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
+<meta property="og:description" content="原文地址:https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747文/Peter Gleeson译/Allen（然而我并不能打开上述原文链接，但是我发现了这个有趣的地方：www.freecodecamp.com 对应的中文网页 www.freecodecamp.cn ）(另外，此文我是在优达学城公众号上看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-04T02:54:02.213Z">
+<meta property="og:updated_time" content="2018-09-19T15:21:05.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图及其遍历">
-<meta name="twitter:description" content="一些概念· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度· 顶点和边的量化属性称为权值，点权和边权 图的存储1.邻接矩阵另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之">
+<meta name="twitter:title" content="【转】26个python技巧">
+<meta name="twitter:description" content="原文地址:https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747文/Peter Gleeson译/Allen（然而我并不能打开上述原文链接，但是我发现了这个有趣的地方：www.freecodecamp.com 对应的中文网页 www.freecodecamp.cn ）(另外，此文我是在优达学城公众号上看">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://zyxingxing.com/2018/09/04/图及其遍历/"/>
+  <link rel="canonical" href="http://zyxingxing.com/2018/09/19/【转】26个python技巧/"/>
 
 
 
 
 
-  <title>图及其遍历 | Xingxing の blog</title>
+  <title>【转】26个python技巧 | Xingxing の blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/04/图及其遍历/">
+    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/19/【转】26个python技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图及其遍历</h1>
+          <h1 class="post-title" itemprop="name headline">【转】26个python技巧</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T08:24:14+08:00">
-                2018-09-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T22:42:06+08:00">
+                2018-09-19
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/经验/" itemprop="url" rel="index">
+                    <span itemprop="name">经验</span>
                   </a>
                 </span>
 
@@ -353,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/04/图及其遍历/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/04/图及其遍历/" itemprop="commentsCount"></span>
+                <a href="/2018/09/19/【转】26个python技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/19/【转】26个python技巧/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -382,17 +382,20 @@
       
 
       
-        <h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><p>· 图由顶点（Vertex）和边（Edge）组成，每条边的两端都必须是图的两个顶点<br>· 图可分为有向图和无向图，无向图的边都是双向的，可以当作正负向两条边组成<br>· 顶点的度是指和该顶点相连的边的条数。对于有向图来说，顶点的出边条数称为该定点的出度，入边条数则为入度<br>· 顶点和边的量化属性称为权值，点权和边权</p>
-<h3 id="图的存储"><a href="#图的存储" class="headerlink" title="图的存储"></a>图的存储</h3><h4 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1.邻接矩阵"></a>1.邻接矩阵</h4><p>另二维数组G[N][N]的两维分别表示图的顶点标号，如果顶点i和j之间有边且i-&gt;j,则另G[i][j]=1（也可存边权）,若为无向边则另G[i][j]也为1（或边权），若不存在边则为0<br>注：邻接矩阵只适用于顶点数目不太大（一般≤1000）的情况</p>
-<h4 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2.邻接表"></a>2.邻接表</h4><p>用vector实现会比较方便：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; V[N];     //存顶点编号</span><br></pre></td></tr></table></figure></p>
-<p>若要添加一条从顶点i到顶点j的有向边：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V[i].push_bach(j);</span><br></pre></td></tr></table></figure></p>
-<p>也可以同时存顶点编号和边权，自行创建结构体即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct Node&#123;</span><br><span class="line">	int v,w;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>则邻接表的定义更改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Node&gt; V[N];</span><br></pre></td></tr></table></figure></p>
-<p>添加从i到j的边权为x的有向边：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V[i].push_bach(Node&#123;j,x&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3><p>几个概念<br>· 连通、连通图和连通分量<br>无向图中，如果从顶点i到j有路径，则称i与j连通，如果图中任意两个顶点之间都连通，则称该图为连通图；否则图中的极大连通子图称为连通分量。<br>· 强连通图和强连通分量<br>有向图中，若从i到j有路径，则称从i到j是连通的，如果对于每一顶点i和j，从i到j和从j到i都有路径，则称该图为强连通图；否则将其中的极大强连通子图称为强连通分量<br>（一般把连通分量和强连通分量统称为连通块）</p>
-<h4 id="1-深度优先搜索-DFS-遍历图"><a href="#1-深度优先搜索-DFS-遍历图" class="headerlink" title="1.深度优先搜索(DFS)遍历图"></a>1.深度优先搜索(DFS)遍历图</h4><p>DFS伪代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DFS(u)&#123;           //访问顶点u</span><br><span class="line">	vis[u]=<span class="literal">true</span>;      //设置u为已访问</span><br><span class="line">	<span class="keyword">for</span>(从u出发能到达的所有顶点v)</span><br><span class="line">	  <span class="keyword">if</span>(vis[v]==<span class="literal">false</span>)    //如果v未访问</span><br><span class="line">	  	 DFS(v);          //递归访问v  ,此处访问深度+1</span><br><span class="line">&#125;</span><br><span class="line">DFSTrave(G)&#123;     //遍历图G</span><br><span class="line">    <span class="keyword">for</span>(G的所有顶点u)</span><br><span class="line">      <span class="keyword">if</span>(vis[u]==<span class="literal">false</span>)</span><br><span class="line">      	  DFS(u);       //访问u所在的连通块</span><br><span class="line">      	                //此处可一并操作数连通块个数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-广度优先搜索-BFS-遍历图"><a href="#2-广度优先搜索-BFS-遍历图" class="headerlink" title="2.广度优先搜索(BFS)遍历图"></a>2.广度优先搜索(BFS)遍历图</h4><p>BFS伪代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">BFS(u)&#123;</span><br><span class="line">	queue q;     //定义队列 &lt;int&gt;/&lt;node&gt;/...</span><br><span class="line">	将u入队；</span><br><span class="line">	vis[u]=<span class="literal">true</span>;  //设置u为已访问</span><br><span class="line">	<span class="keyword">while</span>(q非空)&#123;</span><br><span class="line">		取出q的队首元素u进行访问；</span><br><span class="line">		<span class="keyword">for</span>(从u出发能到达的所有顶点v)  //此处可更新层号</span><br><span class="line">		   <span class="keyword">if</span>(vis[v]==<span class="literal">false</span>)&#123;</span><br><span class="line">		   	将v入队；          </span><br><span class="line">		   	vis[v]=<span class="literal">true</span>;</span><br><span class="line">		   &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">BFSTrave(G)&#123;</span><br><span class="line">	<span class="keyword">for</span>(G的所有顶点u)</span><br><span class="line">	  <span class="keyword">if</span>(vis[u]==<span class="literal">false</span>)</span><br><span class="line">	  	BFS(u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>具体实现需根据题意合理建立邻接矩阵或邻接表，设置变量类型为int或结构体元素或其他~</p>
+        <p>原文地址:<a href="https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747" target="_blank" rel="noopener">https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747</a><br>文/Peter Gleeson<br>译/Allen<br>（然而我并不能打开上述原文链接，但是我发现了这个有趣的地方：<a href="http://www.freecodecamp.com" target="_blank" rel="noopener">www.freecodecamp.com</a> 对应的中文网页 <a href="http://www.freecodecamp.cn" target="_blank" rel="noopener">www.freecodecamp.cn</a> ）(另外，此文我是在优达学城公众号上看到的,其官网为 <a href="https://cn.udacity.com/" target="_blank" rel="noopener">https://cn.udacity.com/</a> 上面有很多优秀的课程)</p>
+<p>Python是目前世界上最流行的编程语言之一。因为:<br>1.它容易学习<br>2.它用途超广<br>3.它有非常多的开源支持（大量的模块和库）<br>本文作者 Peter Gleeson 是一名数据科学家，日常工作几乎离不开python。一路走来，他积累了不少有用的技巧和tips，这些技巧将根据其首字母按A-Z的顺序进行展示。</p>
+<h4 id="all-or-any"><a href="#all-or-any" class="headerlink" title="all or any"></a>all or any</h4><p>Python之所以成为这么一门受欢迎的语言一个原因是它的可读性和表达能力非常强。Python也因此经常被调侃为“可执行的伪代码”。不信你看:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="keyword">True</span>,<span class="keyword">True</span>,<span class="keyword">False</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> any(x):</span><br><span class="line">	print(<span class="string">"At least one True"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> all(x):</span><br><span class="line">	print(<span class="string">"Not one False"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> any(x) <span class="keyword">and</span> <span class="keyword">not</span> all(x):</span><br><span class="line">	print(<span class="string">"At least one True and one False"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="bashplotlib"><a href="#bashplotlib" class="headerlink" title="bashplotlib"></a>bashplotlib</h4><p>你想要在控制台绘图嘛？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install bashplotlib</span><br></pre></td></tr></table></figure></p>
+<p>现在，你的控制台中就可以有图了</p>
+<h4 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h4><p>Python有一些很棒的默认数据类型，但是有时候他们并不会像你所希望的那样发挥作用。<br>幸运的是，Python 标准库提供了collection模块。它让你可以使用更为多样数据类型。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict, Counter</span><br><span class="line"></span><br><span class="line"><span class="comment"># Remembers the order the keys are added!</span></span><br><span class="line">x=OrderedDict(a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Counts the frequency of each character</span></span><br><span class="line">y=Counter(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><p>面对一个Python对象，你是否曾想过可以直接看到其属性？你也许可以试试以下的代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;dir()</span><br><span class="line">&gt;&gt;&gt;dir(<span class="string">"Hello World"</span>)</span><br><span class="line">&gt;&gt;&gt;dir(dir)</span><br></pre></td></tr></table></figure></p>
+<p>这是运行Python的时候一个非常有用的功能，用于动态探索你所使用的对象和模块。更多详情，可以查看这里:<a href="https://docs.python.org/3/library/functions.html#dir" target="_blank" rel="noopener">https://docs.python.org/3/library/functions.html#dir</a></p>
+<h4 id="emoji"><a href="#emoji" class="headerlink" title="emoji"></a>emoji</h4><p>对的，你没看错！ (本星：难过！！我还不会在博客显示表情呜呜)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install emoji</span><br></pre></td></tr></table></figure></p>
+<p>用python来创建表情包，你也可以。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> emoji <span class="keyword">import</span> emojize</span><br><span class="line">print(emojize(<span class="string">":thumbs_up:"</span>))</span><br></pre></td></tr></table></figure></p>
+<h4 id="from-future-import"><a href="#from-future-import" class="headerlink" title="from future import"></a>from <strong>future</strong> import</h4><p>Python非常受欢迎，这也就导致了它的版本更新非常快，新的版本往往会有很多新特性。你不更新，就无法使用。<br>然而，不要害怕。<strong>future</strong> 模块可以让你导入未来版本的功能。有点像时空穿梭有木有！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line">print(<span class="string">"Hello World"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="geopy"><a href="#geopy" class="headerlink" title="geopy"></a>geopy</h4><p>对于程序猿来说地理可能是一个非常有挑战性的领域。但是，geopy模块则让它变得非常简单。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install geopy</span><br></pre></td></tr></table></figure></p>
+<p>它通过提取一系列不同地理编码服务的api来工作，让你能够获得一个地方的完整街道地址、纬度、经度，甚至海拔。<br>这里面同时还包含一个有用的“距离”类别。它能使用你选定的度量去计算了两个地点之间的距离。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> geopy <span class="keyword">import</span> GoogleV3</span><br><span class="line"></span><br><span class="line">place=<span class="string">"221b Baker Street, London"</span></span><br><span class="line">location=GoogleV3().geocode(place)</span><br><span class="line"></span><br><span class="line">print(location.address)</span><br><span class="line">print(location.location)</span><br></pre></td></tr></table></figure></p>
+<p>(待)……</p>
 
       
     </div>
@@ -410,11 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DFS/" rel="tag"># DFS</a>
-          
-            <a href="/tags/图/" rel="tag"># 图</a>
-          
-            <a href="/tags/BFS/" rel="tag"># BFS</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -427,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/04/PATA1123-Is-It-a-Complete-AVL-Tree/" rel="next" title="PATA1123 Is It a Complete AVL Tree">
-                <i class="fa fa-chevron-left"></i> PATA1123 Is It a Complete AVL Tree
+              <a href="/2018/09/18/这是一个课程目录……，等开了课来更笔记/" rel="next" title="这是一个课程目录，等开了课来更笔记">
+                <i class="fa fa-chevron-left"></i> 这是一个课程目录，等开了课来更笔记
               </a>
             
           </div>
@@ -436,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/04/PATA1034-Head-of-a-Gang/" rel="prev" title="PATA1034 Head of a Gang">
-                PATA1034 Head of a Gang <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的存储"><span class="nav-number">2.</span> <span class="nav-text">图的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-邻接矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">1.邻接矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-邻接表"><span class="nav-number">2.2.</span> <span class="nav-text">2.邻接表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的遍历"><span class="nav-number">3.</span> <span class="nav-text">图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-深度优先搜索-DFS-遍历图"><span class="nav-number">3.1.</span> <span class="nav-text">1.深度优先搜索(DFS)遍历图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-广度优先搜索-BFS-遍历图"><span class="nav-number">3.2.</span> <span class="nav-text">2.广度优先搜索(BFS)遍历图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#all-or-any"><span class="nav-number">1.</span> <span class="nav-text">all or any</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bashplotlib"><span class="nav-number">2.</span> <span class="nav-text">bashplotlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#collections"><span class="nav-number">3.</span> <span class="nav-text">collections</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dir"><span class="nav-number">4.</span> <span class="nav-text">dir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emoji"><span class="nav-number">5.</span> <span class="nav-text">emoji</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-future-import"><span class="nav-number">6.</span> <span class="nav-text">from future import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#geopy"><span class="nav-number">7.</span> <span class="nav-text">geopy</span></a></li></ol></div>
             
 
           </div>
