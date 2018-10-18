@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="链表," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,20 +79,16 @@
 
 
 
-<meta name="description" content="To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example,">
-<meta name="keywords" content="链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PATA1032 Sharing">
-<meta property="og:url" content="http://zyxingxing.com/2018/09/07/PATA1032-Sharing/index.html">
+<meta property="og:title" content="一张数据结构与算法的知识导图">
+<meta property="og:url" content="http://zyxingxing.com/2018/10/18/一张数据结构与算法的知识导图/index.html">
 <meta property="og:site_name" content="Xingxing の blog">
-<meta property="og:description" content="To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zyxingxing.com/img/1032.jpg">
-<meta property="og:updated_time" content="2018-09-07T15:00:35.280Z">
+<meta property="og:image" content="http://zyxingxing.com/img/datas.jpg">
+<meta property="og:updated_time" content="2018-10-18T13:25:45.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PATA1032 Sharing">
-<meta name="twitter:description" content="To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example,">
-<meta name="twitter:image" content="http://zyxingxing.com/img/1032.jpg">
+<meta name="twitter:title" content="一张数据结构与算法的知识导图">
+<meta name="twitter:image" content="http://zyxingxing.com/img/datas.jpg">
 
 
 
@@ -122,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://zyxingxing.com/2018/09/07/PATA1032-Sharing/"/>
+  <link rel="canonical" href="http://zyxingxing.com/2018/10/18/一张数据结构与算法的知识导图/"/>
 
 
 
 
 
-  <title>PATA1032 Sharing | Xingxing の blog</title>
+  <title>一张数据结构与算法的知识导图 | Xingxing の blog</title>
   
 
 
@@ -285,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/09/07/PATA1032-Sharing/">
+    <link itemprop="mainEntityOfPage" href="http://zyxingxing.com/2018/10/18/一张数据结构与算法的知识导图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xingxing">
@@ -302,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PATA1032 Sharing</h1>
+          <h1 class="post-title" itemprop="name headline">一张数据结构与算法的知识导图</h1>
         
 
         <div class="post-meta">
@@ -314,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-07T22:55:59+08:00">
-                2018-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T21:23:37+08:00">
+                2018-10-18
               </time>
             
 
@@ -337,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PAT/" itemprop="url" rel="index">
-                    <span itemprop="name">PAT</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -355,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/07/PATA1032-Sharing/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/07/PATA1032-Sharing/" itemprop="commentsCount"></span>
+                <a href="/2018/10/18/一张数据结构与算法的知识导图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/18/一张数据结构与算法的知识导图/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -384,16 +380,7 @@
       
 
       
-        <p>To store English words, one method is to use linked lists and store a word letter by letter. To save some space, we may let the words share the same sublist if they share the same suffix. For example, loading and being are stored as showed in Figure 1.<br><img src="/img/1032.jpg"><br>You are supposed to find the starting position of the common suffix (e.g. the position of i in Figure 1).</p>
-<h4 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h4><p>Each input file contains one test case. For each case, the first line contains two addresses of nodes and a positive N (≤10^​5​​), where the two addresses are the addresses of the first nodes of the two words, and N is the total number of nodes. The address of a node is a 5-digit positive integer, and NULL is represented by −1.<br>Then N lines follow, each describes a node in the format:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Address Data Next</span><br></pre></td></tr></table></figure></p>
-<p>where Address is the position of the node, Data is the letter contained by this node which is an English letter chosen from { a-z, A-Z }, and Next is the position of the next node.</p>
-<h4 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h4><p>For each case, simply output the 5-digit starting position of the common suffix. If the two words have no common suffix, output -1 instead</p>
-<h4 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">11111 22222 9</span><br><span class="line">67890 i 00002</span><br><span class="line">00010 a 12345</span><br><span class="line">00003 g -1</span><br><span class="line">12345 D 67890</span><br><span class="line">00002 n 00003</span><br><span class="line">22222 B 23456</span><br><span class="line">11111 L 00001</span><br><span class="line">23456 e 67890</span><br><span class="line">00001 o 00010</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">67890</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">00001 00002 4</span><br><span class="line">00001 a 10001</span><br><span class="line">10001 s -1</span><br><span class="line">00002 a 10002</span><br><span class="line">10002 t -1</span><br></pre></td></tr></table></figure>
-<h4 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
-<p>题目大意：</p>
-<p>思路：<br>静态链表，找到两个链表的第一个共用结点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;cstdio&gt;</span></span><br><span class="line">struct Node&#123;</span><br><span class="line">	char data;</span><br><span class="line">	int next;</span><br><span class="line">&#125;node[100010];</span><br><span class="line">int <span class="built_in">hash</span>[100010]=&#123;0&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int st1,st2,n,addr;</span><br><span class="line">	scanf(<span class="string">"%d%d%d"</span>,&amp;st1,&amp;st2,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;addr);</span><br><span class="line">		scanf(<span class="string">" %c %d"</span>,&amp;node[addr].data,&amp;node[addr].next);</span><br><span class="line">	&#125;</span><br><span class="line">	int p=st1;</span><br><span class="line">	<span class="keyword">while</span>(p!=-1)&#123;</span><br><span class="line">		<span class="built_in">hash</span>[p]=1;</span><br><span class="line">		p=node[p].next;</span><br><span class="line">	&#125;</span><br><span class="line">	p=st2;</span><br><span class="line">	<span class="keyword">while</span>(p!=-1&amp;&amp;<span class="built_in">hash</span>[p]!=1)&#123;</span><br><span class="line">		p=node[p].next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p!=-1)</span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">"%05d"</span>,p);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><img src="/img/datas.jpg"></p>
 
       
     </div>
@@ -409,12 +396,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/链表/" rel="tag"># 链表</a>
-          
-        </div>
-      
 
       
       
@@ -424,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/链表处理/" rel="next" title="链表处理">
-                <i class="fa fa-chevron-left"></i> 链表处理
+              <a href="/2018/10/09/写在保研之后/" rel="next" title="写在保研之后">
+                <i class="fa fa-chevron-left"></i> 写在保研之后
               </a>
             
           </div>
@@ -433,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/08/PATA1018-Public-Bike-Management/" rel="prev" title="PATA1018 Public Bike Management">
-                PATA1018 Public Bike Management <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -495,17 +472,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,22 +537,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-Specification"><span class="nav-number">2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">3.</span> <span class="nav-text">Sample Input 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">4.</span> <span class="nav-text">Sample Output 1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">5.</span> <span class="nav-text">Sample Input 2:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">6.</span> <span class="nav-text">Sample Output 2:</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
